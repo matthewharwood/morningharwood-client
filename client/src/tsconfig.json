@@ -12,7 +12,7 @@
     "sourceMap": true,
     "target": "es5",
     "files": [
-      "./app/mh-remote/todoist.ts"
+      "./app/mh-remote/todoist/todoist.ts"
     ],
     "typeRoots": [
       "../node_modules/@types"

@@ -3,18 +3,29 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
-import { MhRemoteModule } from './mh-remote/mh-remote.module';
 
+
+import {Routes, RouterModule} from "@angular/router";
+import {ModuleWithProviders} from "@angular/core";
+import {MhCanvasDirective} from './mh-splash-bg/mh-canvas.directive';
+
+
+const APP_ROUTES: Routes = [
+  { path: 'about', loadChildren:  './+about/about.module#AboutRouteModule' }
+];
+
+export const routing: ModuleWithProviders = RouterModule.forRoot(APP_ROUTES);
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    MhCanvasDirective
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    MhRemoteModule
+    routing,
   ],
   providers: [],
   bootstrap: [AppComponent]

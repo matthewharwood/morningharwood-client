@@ -6,7 +6,28 @@ import 'rxjs/add/operator/map';
 import {Todoist} from './todoist'
 
 
-
+/**
+ *  @USAGE
+ *
+ *  @ngModule()
+ *  imports: [
+ *    MhRemoteModule
+ *  ]
+ *
+ *  @component()
+ *  export class TodoistComponent(){
+ *    errorMessage: string;
+ *    todoist: Array<Todoist.Item>;
+ *    constructor(private todoService: TodoistService){}
+ *
+ *     ngOnInit() { this.getTodoist(); }
+ *     getTodoist() {
+ *     this.todoService.getItems().subscribe(
+ *       todoist => this.todoist = todoist.items,
+ *       error =>  this.errorMessage = <any>error);
+ *
+ *  }
+ */
 @Injectable()
 export class TodoistService {
   private todoistUrl = 'http://localhost:8000/api/v1/todoist';
