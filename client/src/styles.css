@@ -1,4 +1,4 @@
-/* You can add global styles to this file, and also import other style files */
+/*!* You can add global styles to this file, and also import other style files *!*/
 /*@font-face {*/
   /*font-family: 'Eksell Display Stencil';*/
   /*src: url('assets/fonts/hinted-EksellDisplay-Stencil.eot');*/
@@ -18,9 +18,15 @@
   font-weight: 500;
   font-style: normal;
 }
-h1{
+
+h1 {
   font-family: 'Eksell Display Small';
 }
+
+/*h1.headline {*/
+  /*font-family: 'Eksell Display Stencil';*/
+/*}*/
+
 h2 {
   font-family: 'Muli', sans-serif;
 }

@@ -6,8 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  public title = 'Morning Harwood';
-  public subtitle = 'A digital Portfolio.';
+
 
   constructor(){}
 

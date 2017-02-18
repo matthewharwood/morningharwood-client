@@ -23,7 +23,7 @@ const fragmentShaderText = `
 `;
 
 const TAG_NAMES = {
-  'CANVAS': 'CANVAS'
+  CANVAS: 'CANVAS'
 };
 
 @Directive({
@@ -52,14 +52,14 @@ export class MhCanvasDirective implements OnInit{
 
     gl.compileShader(vertexShader);
     if(!gl.getShaderParameter(vertexShader, gl.COMPILE_STATUS)) {
-      console.error(gl.getShaderInfoLog(vertexShader))
+      console.error(gl.getShaderInfoLog(vertexShader));
       return false;
     }
 
     gl.compileShader(fragmentShader);
 
     if(!gl.getShaderParameter(fragmentShader, gl.COMPILE_STATUS)) {
-      console.error(gl.getShaderInfoLog(fragmentShader))
+      console.error(gl.getShaderInfoLog(fragmentShader));
       return false;
     }
 

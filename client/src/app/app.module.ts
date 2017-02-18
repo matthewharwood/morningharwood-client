@@ -5,13 +5,15 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 
 
-import {Routes, RouterModule} from "@angular/router";
-import {ModuleWithProviders} from "@angular/core";
-import {MhCanvasDirective} from './mh-splash-bg/mh-canvas.directive';
+import { Routes, RouterModule } from "@angular/router";
+import { ModuleWithProviders } from "@angular/core";
+import { MhCanvasDirective } from './mh-splash-bg/mh-canvas.directive';
 
 
 const APP_ROUTES: Routes = [
-  { path: 'about', loadChildren:  './+about/about.module#AboutRouteModule' }
+  { path: '',   redirectTo: '/menu', pathMatch: 'full' },
+  { path: 'about', loadChildren:  './+about/about.module#AboutRouteModule' },
+  { path: 'menu', loadChildren:  './+menu/menu.module#MenuRouteModule' }
 ];
 
 export const routing: ModuleWithProviders = RouterModule.forRoot(APP_ROUTES);
