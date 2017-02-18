@@ -10,7 +10,7 @@ import {Component, OnInit} from "@angular/core";
 })
 export class MenuComponent implements OnInit{
   public title = 'Morning Harwood';
-  public subtitle = 'A digital Portfolio.';
+  public subtitle = 'Coming Soon';
 
   ngOnInit() {
     console.log('such wow from +about')
