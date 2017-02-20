@@ -15,7 +15,6 @@ import { pulseData$ } from '../_handies/observable';
  * @whatItDoes Orchestrates all the components inside the Menu Routes component.
  * @example <menu-route></menu-route>
  */
-
 @Component({
   selector: 'menu-route',
   templateUrl: 'menu.component.html',

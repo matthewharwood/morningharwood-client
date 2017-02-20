@@ -16,8 +16,6 @@ $rotation: 30deg;
   position: fixed;
   top: 50%;
   transform: rotate(-$rotation);
-  -ms-transform: rotate(-$rotation);
-  -webkit-transform: rotate(-$rotation);
   width: $boner-width/2;
 
   @include bp(large) {
