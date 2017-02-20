@@ -1,7 +1,7 @@
 /**
  * Created by matth on 2/3/2017.
  */
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, HostBinding  } from "@angular/core";
 import { data, RunningHeader, Item } from '../running-head/running-head.content';
 import { Observable } from "rxjs";
 
@@ -15,6 +15,7 @@ import { pulseData$ } from '../_handies/observable';
  * @whatItDoes Orchestrates all the components inside the Menu Routes component.
  * @example <menu-route></menu-route>
  */
+
 @Component({
   selector: 'menu-route',
   templateUrl: 'menu.component.html',

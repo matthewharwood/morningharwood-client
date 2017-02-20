@@ -1,17 +1,4 @@
 <running-head [data]="(data$ | async)"></running-head>
 <app-boner></app-boner>
-<nav>
-  <a [routerLink]="['/work']">
-    <span>Work</span>
-    <i>01</i>
-  </a>
-  <a [routerLink]="['/notes']">
-    <span>Notes</span>
-    <i>02</i>
-  </a>
-  <a [routerLink]="['/profile']">
-    <span>Profile</span>
-    <i>03</i>
-  </a>
-</nav>
+<app-navigation></app-navigation>
 <app-folio></app-folio>

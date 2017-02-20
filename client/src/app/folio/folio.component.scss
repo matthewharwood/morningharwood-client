@@ -34,11 +34,19 @@ h6, p {
 
 h6 {
   color: $red-folio;
-  font-weight: 700;
 }
 
 p {
   font-family: $sans-default-family;
-  font-style: italic;
-  font-weight: 400;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+
+  &:hover {
+    color: $red-folio;
+    font-style: italic;
+    border-bottom: dotted 1px $black-mh;
+  }
 }

@@ -17,78 +17,8 @@ $hover: $red-mh;
   @include bp(large) {
     display: flex;
     height: 100%;
-    max-width: 520px;
+    max-width: 100%;
     padding: 0 0 72px 0;
   }
 }
 
-nav {
-  align-content: flex-end;
-  align-items: stretch;
-  display: flex;
-  flex-direction: column;
-  text-align: left;
-  width: 100%;
-  padding: 0 0 42px 42px;
-
-  @include bp(large) {
-    padding-bottom: 0;
-    text-align: right;
-  }
-
-  a {
-    color: $text;
-    cursor: pointer;
-    font-feature-settings: "kern" 1, "liga" 1, "swsh" 1;
-    font-size: $text-size;
-    line-height: 1.6;
-    position: relative;
-    text-decoration: none;
-    width: 100%;
-
-    @include bp(large) {
-      line-height: 1.4;
-      font-size: 82px;
-    }
-
-    :hover {
-      color: $hover;
-    }
-
-    span {
-      @include bp(large) {
-        padding: 0 72px;
-        position: relative;
-      }
-    }
-
-    &::before {
-      position: absolute;
-      content: '';
-      bottom: 0;
-      background: $text;
-      height: 1px;
-
-      @include bp(large) {
-        height: 2px;
-        left: 72px;
-        right: 72px;
-        width: 100%;
-      }
-    }
-  }
-}
-
-i {
-  @include hide();
-  font-family: 'Noto Sans', sans-serif;
-  font-style: normal;
-  font-weight: 700;
-  position: relative;
-
-  @include bp(large) {
-    @include show(inline-block);
-    font-size: 12px;
-    right: 72px;
-  }
-}

@@ -1,0 +1,11 @@
+<nav>
+  <!--<a [routerLink]="['/work']">-->
+    <!--<span>Work</span>-->
+    <!--<i>01</i>-->
+  <!--</a>-->
+  <!--<a [routerLink]="['/notes']">-->
+    <!--<span>Notes</span>-->
+    <!--<i>02</i>-->
+  <!--</a>-->
+  <app-item [data]="d" [index]="i" *ngFor="let d of data; let i=index"></app-item>
+</nav>
