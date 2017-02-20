@@ -1,48 +1,20 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
+import { content,RunningHeader } from './running-head.content';
 
 @Component({
-  selector: 'app-running-head',
+  selector: 'running-head',
   templateUrl: 'running-head.component.html',
   styleUrls: ['running-head.component.scss']
 })
 export class RunningHeadComponent implements OnInit, OnDestroy {
-  private content: Array<string>;
+  private content = content;
   private bogoInterval: number;
   public bogoCount: number = 0;
-  public bogoContent: Array<string>;
+  public bogoContent: RunningHeader;
 
   constructor() {}
 
   ngOnInit() {
-    this.content =  [
-      'the future',
-      'architecture',
-      'my work',
-      'your work',
-      'OOP vs. Functional',
-      'design',
-      'guitar',
-      'inspirational people',
-      'love',
-      'travel',
-      'singularity',
-      'creativity',
-      'creativity',
-      'mixed, virtual, augmented reality',
-      'art',
-      'imagination',
-      'problem solving',
-      'space',
-      'cooking',
-      'FOMO',
-      'ontological design',
-      'flow state',
-      'foreign languages',
-      'streaming on the internet',
-      'video games',
-      'coffee'
-    ];
-
     this.bogoContent = this.bogo(this.content);
     this.bogoInterval = this.intervalIndex();
   }
@@ -51,7 +23,7 @@ export class RunningHeadComponent implements OnInit, OnDestroy {
     clearInterval(this.bogoInterval);
   }
 
-  private bogo(v:Array<string>):Array<string> {
+  private bogo(v:RunningHeader):RunningHeader {
     for(var j, x, i = v.length; i; j = Math.floor(Math.random() * i), x = v[--i], v[i] = v[j], v[j] = x);
     return v;
   }
