@@ -1,7 +1,7 @@
 /**
  * Created by matth on 2/3/2017.
  */
-import { Component, OnInit, HostBinding  } from "@angular/core";
+import { Component, OnInit, ChangeDetectionStrategy  } from "@angular/core";
 import { data, RunningHeader, Item } from '../running-head/running-head.content';
 import { Observable } from "rxjs";
 
@@ -19,6 +19,7 @@ import { pulseData$ } from '../_handies/observable';
   selector: 'menu-route',
   templateUrl: 'menu.component.html',
   styleUrls: ['menu.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class MenuComponent implements OnInit {
   private data: RunningHeader;

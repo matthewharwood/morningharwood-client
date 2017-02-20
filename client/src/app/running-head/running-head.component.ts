@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ChangeDetectionStrategy } from '@angular/core';
+import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
 import { Item } from './running-head.content';
 import { Observable } from "rxjs";
 
@@ -9,14 +9,6 @@ import { Observable } from "rxjs";
   styleUrls: ['running-head.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class RunningHeadComponent implements OnInit {
+export class RunningHeadComponent {
   @Input() data: Observable<Item>;
-  public letsTalk: any; // I want to remove this.
-
-  ngOnInit() {
-    // And I want to remove this whole ngOnInit
-    // this.data.subscribe((data) => {
-    //   this.letsTalk = data.name;
-    // })
-  }
 }
