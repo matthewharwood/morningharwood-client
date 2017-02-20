@@ -6,7 +6,7 @@ import {Component, OnInit} from "@angular/core";
 @Component({
   selector: 'menu-route',
   templateUrl: 'menu.component.html',
-  styleUrls: ['menu.component.css'],
+  styleUrls: ['menu.component.scss'],
 })
 export class MenuComponent implements OnInit{
   public title = 'Morning Harwood';

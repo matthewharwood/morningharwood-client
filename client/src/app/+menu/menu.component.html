@@ -1,9 +1,15 @@
-<h1 class="headline">
-  {{title}}
-</h1>
-<h2>
-  {{subtitle}}
-</h2>
-<!--<canvas appMhCanvas></canvas>-->
-<!--<a routerLink="/">Home</a>-->
-<!--<a routerLink="about">About</a>-->
+<app-running-head></app-running-head>
+<nav>
+  <a [routerLink]="['/work']">
+    <span>Work</span>
+    <i>01</i>
+  </a>
+  <a [routerLink]="['/labs']">
+    <span>Labs</span>
+    <i>02</i>
+  </a>
+  <a [routerLink]="['/profile']">
+    <span>Profile</span>
+    <i>03</i>
+  </a>
+</nav>
