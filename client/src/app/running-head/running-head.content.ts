@@ -1,13 +1,13 @@
 /**
  * Created by matth on 2/19/2017.
  */
-interface Item {
+export interface Item {
   name: string;
 }
 
 export interface RunningHeader extends Array<Item>{}
 
-export const content:RunningHeader = [
+export const data:RunningHeader = [
     {name: 'the future',},
     {name: 'architecture',},
     {name: 'my work',},
