@@ -13,7 +13,7 @@ export class MenuComponent implements OnInit{
   public subtitle = 'Coming Soon';
 
   ngOnInit() {
-    console.log('such wow from +about')
+    console.log('such wow from +profile')
   }
 }
 

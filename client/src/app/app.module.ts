@@ -12,8 +12,10 @@ import { MhCanvasDirective } from './mh-splash-bg/mh-canvas.directive';
 
 const APP_ROUTES: Routes = [
   { path: '',   redirectTo: '/menu', pathMatch: 'full' },
-  { path: 'about', loadChildren:  './+about/about.module#AboutRouteModule' },
-  { path: 'menu', loadChildren:  './+menu/menu.module#MenuRouteModule' }
+  { path: 'menu', loadChildren:  './+menu/menu.module#MenuRouteModule' },
+  { path: 'notes', loadChildren:  './+notes/notes.module#NotesRouteModule' },
+  { path: 'profile', loadChildren:  './+profile/profile.module#ProfileRouteModule' },
+  { path: 'work', loadChildren:  './+work/work.module#WorkRouteModule' }
 ];
 
 export const routing: ModuleWithProviders = RouterModule.forRoot(APP_ROUTES);

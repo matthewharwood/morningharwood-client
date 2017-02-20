@@ -1,0 +1,44 @@
+@import '../../assets/css/_mixins';
+@import '../../assets/css/_variables';
+
+
+$red-folio: $red-mh;
+
+:host {
+  left: 28px;
+  position: fixed;
+  top: 16px;
+
+  @include bp(large) {
+    bottom: 0;
+    left: 72px;
+    top: auto;
+    transform: rotate(-90deg);
+    transform-origin: 0 0;
+  }
+
+
+  &::before {
+    background: $red-folio;
+    content: '';
+    height: 28px;
+    left: -22px;
+    position: absolute;
+    width: 4px;
+  }
+}
+
+h6, p {
+  font-size: 10px;
+}
+
+h6 {
+  color: $red-folio;
+  font-weight: 700;
+}
+
+p {
+  font-family: $sans-default-family;
+  font-style: italic;
+  font-weight: 400;
+}
