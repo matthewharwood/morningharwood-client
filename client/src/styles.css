@@ -9,27 +9,27 @@
   /*font-style: normal;*/
 /*}*/
 
-@font-face {
-  font-family: 'Eksell Display Small';
-  src: url('assets/fonts/hinted-EksellDisplay-Small.eot');
-  src: url('assets/fonts/hinted-EksellDisplay-Small.eot?#iefix') format('embedded-opentype'),
-  url('assets/fonts/hinted-EksellDisplay-Small.woff') format('woff'),
-  url('assets/fonts/hinted-EksellDisplay-Small.ttf') format('truetype');
-  font-weight: 500;
-  font-style: normal;
-}
+/*@font-face {*/
+  /*font-family: 'Eksell Display Small';*/
+  /*src: url('assets/fonts/hinted-EksellDisplay-Small.eot');*/
+  /*src: url('assets/fonts/hinted-EksellDisplay-Small.eot?#iefix') format('embedded-opentype'),*/
+  /*url('assets/fonts/hinted-EksellDisplay-Small.woff') format('woff'),*/
+  /*url('assets/fonts/hinted-EksellDisplay-Small.ttf') format('truetype');*/
+  /*font-weight: 500;*/
+  /*font-style: normal;*/
+/*}*/
 
-h1 {
-  font-family: 'Eksell Display Small';
-}
+/*h1 {*/
+  /*font-family: 'Eksell Display Small';*/
+/*}*/
 
 /*h1.headline {*/
   /*font-family: 'Eksell Display Stencil';*/
 /*}*/
 
-h2 {
-  font-family: 'Muli', sans-serif;
-}
+/*h2 {*/
+  /*font-family: 'Muli', sans-serif;*/
+/*}*/
 
 
 body, div,

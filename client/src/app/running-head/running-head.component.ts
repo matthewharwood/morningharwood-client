@@ -1,71 +1,20 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, Input, ChangeDetectionStrategy } from '@angular/core';
+import { Item } from './running-head.content';
+import { Observable } from 'rxjs/Rx';
 
 @Component({
-  selector: 'app-running-head',
+  selector: 'running-head',
   templateUrl: 'running-head.component.html',
-  styleUrls: ['running-head.component.scss']
+  styleUrls: ['running-head.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class RunningHeadComponent implements OnInit, OnDestroy {
-  private content: Array<string>;
-  private bogoInterval: number;
-  public bogoCount: number = 0;
-  public bogoContent: Array<string>;
-
-  constructor() {}
+export class RunningHeadComponent implements OnInit {
+  @Input() data: Observable<Item>;
+  public letsTalk: any;
 
   ngOnInit() {
-    this.content =  [
-      'the future',
-      'architecture',
-      'my work',
-      'your work',
-      'OOP vs. Functional',
-      'design',
-      'guitar',
-      'inspirational people',
-      'love',
-      'travel',
-      'singularity',
-      'creativity',
-      'creativity',
-      'mixed, virtual, augmented reality',
-      'art',
-      'imagination',
-      'problem solving',
-      'space',
-      'cooking',
-      'FOMO',
-      'ontological design',
-      'flow state',
-      'foreign languages',
-      'streaming on the internet',
-      'video games',
-      'coffee'
-    ];
-
-    this.bogoContent = this.bogo(this.content);
-    this.bogoInterval = this.intervalIndex();
+    this.data.subscribe((data) => {
+      this.letsTalk = data.name;
+    })
   }
-
-  ngOnDestroy() {
-    clearInterval(this.bogoInterval);
-  }
-
-  private bogo(v:Array<string>):Array<string> {
-    for(var j, x, i = v.length; i; j = Math.floor(Math.random() * i), x = v[--i], v[i] = v[j], v[j] = x);
-    return v;
-  }
-
-  // TODO Refactor interval
-  public intervalIndex():number {
-    const countIntervals = () => {
-      ++this.bogoCount;
-      if(this.bogoCount >= this.content.length-1) {
-        clearInterval(this.bogoInterval);
-      }
-    };
-
-    return window.setInterval(countIntervals, 1000);
-  }
-
 }
