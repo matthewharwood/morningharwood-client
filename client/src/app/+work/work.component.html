@@ -1,5 +1,18 @@
-<h1>
-  Work
-</h1>
+<article *ngFor="let post of posts" >
+  <div class="work-container"  [ngClass]="{'overlay-open': modalState === 'MODAL_OPEN'}">
+    <div class="article-header-wrapper">
+      <app-article-header [post]="post">
 
-<img src="matthew-harwood-dystopian.jpg" alt="Matthew Harwood">
+      </app-article-header>
+      <a class="action-button" [routerLink]="[post.slug]">Learn More</a>
+    </div>
+
+    <footer>
+      <div class="overview" *ngFor="let overview of post.overview">
+        <h4>{{overview.title}}</h4>
+        <h5>{{overview.subtitle}}</h5>
+        <p>{{overview.description}}</p>
+      </div>
+    </footer>
+  </div>
+</article>

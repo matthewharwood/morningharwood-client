@@ -1,17 +1,15 @@
 /**
  * Created by matth on 2/3/2017.
  */
-import {Component, OnInit} from "@angular/core";
+import { Component } from "@angular/core";
+import { POST_TABLE } from './work.content';
 
 @Component({
   selector: 'work-route',
   templateUrl: 'work.component.html',
-  styleUrls: ['work.component.css'],
+  styleUrls: ['work.component.scss'],
 })
-export class WorkComponent implements OnInit{
-
-  ngOnInit() {
-    console.log('such wow from +profile')
-  }
+export class WorkComponent {
+  public posts = POST_TABLE.data;
 }
 
