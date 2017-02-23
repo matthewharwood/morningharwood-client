@@ -25,17 +25,17 @@ export const POST_TABLE:WorkPosts = {
       slug: 'stanley',
       overview: [
         {
-          title: 'What it is:',
+          title: 'What it is',
           subtitle: '',
           description: 'Stanley is a CMS tool that affords content authors, art directors, designers, client or pretty much anyone to work, collaboratively, in real time to curate pages for nike/jordan.com.'
         },
         {
-          title: 'My roles:',
-          subtitle: 'Creative Developer',
+          title: 'My roles',
+          subtitle: '',
           description: 'Co-UxD, Co-Visual Designer, Agile Scrum master, & frontend lead.'
         },
         {
-          title: 'Why is it important?:',
+          title: 'Why is it important?',
           subtitle: '',
           description: 'Stanley opens up possibilities for AKQA to be more involved & more hands-on.The Stanley editor bridged a gap between client and designer and served as a collaborative pre-visualization tool.'
         }

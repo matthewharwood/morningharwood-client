@@ -21,7 +21,6 @@ h3,
 h4,
 h6,
 p {
-  font-family: $sans-default-family;
   font-size: 14px;
   font-weight: 300;
   text-align: center;
@@ -55,7 +54,7 @@ h4 {
     color: rgba($default-text, .1);
     display: inline-block;
     font-family: $display-font-family;
-    font-size: 50vh;
+    font-size: 65vh;
     vertical-align: middle;
     width: 100%;
     user-select: none;
@@ -70,52 +69,34 @@ h4 {
   display: inline-block;
   position: relative;
 
-  &::before {
-    background: $text;
-    content: '';
-    height: 1px;
-    left: -$line-width;
-    position: absolute;
-    top: $line-top;
-    width: $line-width;
-  }
-
-  &::after {
-    background: $text;
-    content: '';
-    height: 1px;
-    position: absolute;
-    right: -$line-width;
-    top: $line-top;
-    width: $line-width;
-  }
-
   h3 {
     display: inline-block;
-    font-size: 12px;
-    font-weight: 700;
+    font-size: 9px;
+    font-weight: 800;
     letter-spacing: 3px;
     padding: 0 12px;
     position: relative;
     text-transform: uppercase;
     top: -13px;
+    color: #222;
+    font-family: sans-serif;
   }
 }
 
 
 h4 {
-  font-size: 16px;
+  font-size: 19px;
   line-height: 1.8;
   margin: 0 auto;
   max-width: 600px;
-  padding-top: 16px;
+  padding: 16px 52px 0 52px;
 }
 
 @include bp(large){}
 
 .title-wrapper {
   display: block;
-  padding: 32px;
+  padding: 16px 32px 0 32px;
 
   h2 {
     font-size: 36px;

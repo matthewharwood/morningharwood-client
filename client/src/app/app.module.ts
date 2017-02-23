@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { Routes, RouterModule } from "@angular/router";
 import { ModuleWithProviders } from "@angular/core";
 import { MhCanvasDirective } from './mh-splash-bg/mh-canvas.directive';
+import { KonamiDirective } from './keyboard/konami.directive'
 
 
 const APP_ROUTES: Routes = [
@@ -23,6 +24,7 @@ export const routing: ModuleWithProviders = RouterModule.forRoot(APP_ROUTES);
   declarations: [
     AppComponent,
     MhCanvasDirective,
+    KonamiDirective
   ],
   imports: [
     BrowserModule,
