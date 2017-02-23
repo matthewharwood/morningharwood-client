@@ -15,7 +15,6 @@ $hover: $red-mh;
   position: fixed;
   bottom: 16px;
   right: 16px;
-  background: $red-mh url('../assets/chat-white.svg') no-repeat center center;
   background-size: auto 50%;
 
   @include bp(large) {
