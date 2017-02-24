@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
+import { StoreModule } from '@ngrx/store';
+import { counterReducer } from './_handies/sdk';
 
 import { Routes, RouterModule } from "@angular/router";
 import { ModuleWithProviders } from "@angular/core";
@@ -31,6 +33,7 @@ export const routing: ModuleWithProviders = RouterModule.forRoot(APP_ROUTES);
     FormsModule,
     HttpModule,
     routing,
+    StoreModule.provideStore({ counter: counterReducer })
   ],
   bootstrap: [AppComponent]
 })

@@ -1,18 +1,18 @@
-import {Directive, HostListener, Input, OnInit} from '@angular/core';
+import {Directive, OnInit} from '@angular/core';
 import {KeyCodes} from './key-codes.enum';
 import {Observable} from "rxjs";
-import 'rxjs/add/operator/every';
+import { Store } from '@ngrx/store';
+import { INCREMENT, DECREMENT } from '../_handies/sdk';
+import {AppState} from '../app.interface';
 
 @Directive({
   selector: '[mhKonami]'
 })
 export class KonamiDirective implements OnInit {
-  @Input('mhKonami') konamiCode: Array<string>|boolean;
-  public setClass:boolean = false;
-
+  constructor(private store: Store<AppState>){}
   ngOnInit() {
 
-    const konami = [
+    const konami:Array<KeyCodes> = [
       KeyCodes.UP_ARROW,
       KeyCodes.UP_ARROW,
       KeyCodes.DOWN_ARROW,
@@ -26,11 +26,16 @@ export class KonamiDirective implements OnInit {
       KeyCodes.ENTER,
     ];
 
-    const keys = Observable.fromEvent(document, 'keyup');
-    const buffered: any = keys.bufferCount(11, 1);
-    buffered.subscribe(x => {
-      x.every((y, i) => y.keyCode === konami[i])
-    });
+    const keys:Observable<KeyboardEvent>  = Observable.fromEvent(document, 'keyup');
+    const buffered = keys.bufferCount(11, 1);
+    buffered.subscribe(
+      buf => {
+        buf.every((e, i) =>  e.keyCode === konami[i])
+            ? this.store.dispatch({ type: INCREMENT })
+            : this.store.dispatch({ type: DECREMENT });
+      }
+    );
+
 
     console.debug("⬆', '⬆', '⬇', '⬇', '⬅', '➡', '⬅', '➡', 'b', 'a', 'enter', 'https://en.wikipedia.org/wiki/Konami_Code'");
   }
