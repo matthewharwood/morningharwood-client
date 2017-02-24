@@ -1,2 +1,3 @@
-
-<router-outlet [mhKonami]="'⬆,⬆,⬇,⬇,⬅,➡,⬅,➡,b,a,enter'"></router-outlet>
+<div class="router-wrap" [mhKonami]="'⬆,⬆,⬇,⬇,⬅,➡,⬅,➡,b,a,enter'" [ngClass]="{'konami': value}">
+  <router-outlet></router-outlet>
+</div>
