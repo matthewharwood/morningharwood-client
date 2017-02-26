@@ -110,6 +110,10 @@ html, body {
   padding: 0;
   font-family: "Times New Roman", Serif;
 }
+.router-wrap {
+  height: 100%;
+  width: 100%;
+}
 .konami {
   font-family: "Comic Sans MS", cursive !important;
 }
