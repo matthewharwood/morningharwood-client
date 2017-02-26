@@ -1,0 +1,51 @@
+@import '../../../assets/css/_variables';
+@import '../../../assets/css/_mixins';
+@import '../../../assets/css/_extends';
+
+work-post {
+  background: #333;
+}
+
+.main {
+  background: #333;
+  min-height: 100vh;
+  font-size: 28px;
+  color: #ccc;
+  width: 100%;
+  border-left: 36px solid #222;
+  border-right: 36px solid #222;
+  padding: 72px;
+}
+
+article {
+  max-width: 740px;
+  padding: 0 20px;
+  margin: 0 auto;
+  // ADD THIS AS IT OWN CLASS AS A TEMPLATE TYPE!\
+  //-moz-column-count: 2;
+  //-moz-column-gap: 20px;
+  //-webkit-column-count: 2;
+  //-webkit-column-gap : 20px;
+  //-moz-column-rule-color:  #ccc;
+  //-moz-column-rule-style:  solid;
+  //-moz-column-rule-width:  1px;
+  //-webkit-column-rule-color:  #ccc;
+  //-webkit-column-rule-style: solid ;
+  //-webkit-column-rule-width:  1px;
+}
+
+h1 {
+  font-size: 1.6em;
+  line-height: 1.25em;
+  width: 100%;
+  margin: 36px 0;
+  padding: 0;
+}
+
+p {
+  line-height: 1.6em;
+  font-size: 1em;
+  margin: 0 0 36px 0;
+  widows: 3;
+  orphans: 3;
+}
