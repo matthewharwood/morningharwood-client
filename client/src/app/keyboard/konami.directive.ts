@@ -1,18 +1,20 @@
-import {Directive, OnInit} from '@angular/core';
-import {KeyCodes} from './key-codes.enum';
-import {Observable} from "rxjs";
+import { Directive, OnInit, OnDestroy } from '@angular/core';
+import { KeyCodes } from './key-codes.enum';
+import { Observable } from "rxjs";
 import { Store } from '@ngrx/store';
-import { INCREMENT, DECREMENT } from '../_handies/sdk';
-import {AppState} from '../app.interface';
+import { ACTIVATE, DEACTIVATE } from '../_handies/sdk';
+import { AppState } from '../app.interface';
 
 @Directive({
   selector: '[mhKonami]'
 })
-export class KonamiDirective implements OnInit {
-  constructor(private store: Store<AppState>){}
+export class KonamiDirective implements OnInit, OnDestroy {
+  constructor(private store: Store<AppState>) {
+  }
+
   ngOnInit() {
 
-    const konami:Array<KeyCodes> = [
+    const konami:KeyCodes[] =  [
       KeyCodes.UP_ARROW,
       KeyCodes.UP_ARROW,
       KeyCodes.DOWN_ARROW,
@@ -26,17 +28,22 @@ export class KonamiDirective implements OnInit {
       KeyCodes.ENTER,
     ];
 
+
     const keys:Observable<KeyboardEvent>  = Observable.fromEvent(document, 'keyup');
     const buffered = keys.bufferCount(11, 1);
     buffered.subscribe(
       buf => {
         buf.every((e, i) =>  e.keyCode === konami[i])
-            ? this.store.dispatch({ type: INCREMENT })
-            : this.store.dispatch({ type: DECREMENT });
+            ? this.store.dispatch({ type: ACTIVATE })
+            : this.store.dispatch({ type: DEACTIVATE });
       }
     );
 
 
     console.debug("⬆', '⬆', '⬇', '⬇', '⬅', '➡', '⬅', '➡', 'b', 'a', 'enter', 'https://en.wikipedia.org/wiki/Konami_Code'");
+  }
+
+  ngOnDestroy() {
+
   }
 }
