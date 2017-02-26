@@ -1,9 +1,7 @@
 <article *ngFor="let post of posts" >
   <div class="work-container"  [ngClass]="{'overlay-open': modalState === 'MODAL_OPEN'}">
     <div class="article-header-wrapper">
-      <app-article-header [post]="post">
-
-      </app-article-header>
+      <app-article-header [post]="post"></app-article-header>
       <a class="action-button" [routerLink]="[post.slug]">Learn More</a>
     </div>
 

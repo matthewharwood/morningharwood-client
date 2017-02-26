@@ -1,7 +1,7 @@
 /**
  * Created by matth on 2/20/2017.
  */
-
+// TODO (mharwood) Refactor this WorkPost
 export interface WorkPost {
   id: number,
   title: string,
@@ -44,8 +44,25 @@ export const POST_TABLE:WorkPosts = {
       id: 1,
       title: 'Target Weekly Ad',
       categories: ['Web Application'],
-      paragraph: '',
-      slug: 'target-weekly-ad'
+      paragraph: 'Worked on a team of 15 to imagine, create, and maintain the next iteration of Target\'s Weekly Digital Circular.',
+      slug: 'target-weekly-ad',
+      overview: [
+        {
+          title: 'What it is',
+          subtitle: '4 months production time.',
+          description: 'Full redesign and rearchitecture of target\'s Weekly Ad. Client requested for a fully responsive modern web application that can also run on IE8.'
+        },
+        {
+          title: 'My roles',
+          subtitle: 'Create Developer',
+          description: 'UxD, Visual Designer, & Frontend Developer'
+        },
+        {
+          title: 'Why is it important?',
+          subtitle: '40m impression in November 14\' alone.',
+          description: 'This application was to be showcased for blackfriday. These deadlines are the most important deadlines for all retail stores.'
+        }
+      ]
     }, {
       id: 2,
       title: 'Google Pathfinder',
@@ -56,8 +73,25 @@ export const POST_TABLE:WorkPosts = {
       id: 3,
       title: 'AKQA Insights',
       categories: ['Internet of Things'],
-      paragraph: 'Worked collaboratively with an Art Director, Visual Designer & another Creative Developer to create a tool that unifies what was otherwise a fragmented process on Nike Jordan.',
-      slug: 'stanley'
+      paragraph: 'It\'s like TED talk for AKQA. Every year AKQA does a global event called insights. For this event, AKQA invites all of their c-level clients into one room to watch insightful presentations.',
+      slug: 'stanley',
+      overview: [
+        {
+          title: 'What it is',
+          subtitle: '3 months production time',
+          description: 'A critical & speculative design piece that shed light on our inevitable connected future.'
+        },
+        {
+          title: 'My roles',
+          subtitle: 'Keynote speaker, Inventor, & Creator',
+          description: 'UxD, Visual Designer, & Frontend Developer'
+        },
+        {
+          title: 'Why is it important?',
+          subtitle: '40m impression in November 14\' alone.',
+          description: 'This application was to be showcased for black friday. These deadlines are the most important deadlines for all retail stores.'
+        }
+      ]
     }, {
       id: 4,
       title: 'Languages of Google Translate',
@@ -68,8 +102,25 @@ export const POST_TABLE:WorkPosts = {
       id: 5,
       title: 'Pillow +',
       categories: ['Art Installation'],
-      paragraph: '',
-      slug: 'facebook-pillow'
+      paragraph: 'Liking something today requires less of a commitment and action than ever before. Pillow + is a physical pillow, a physical interaction, for a digital "like" on facebook.',
+      slug: 'facebook-pillow',
+      overview: [
+        {
+          title: 'What it is',
+          subtitle: 'My first attempt at art.',
+          description: 'An art piece that aims to remind people that love should take a bit more effort.'
+        },
+        {
+          title: 'My roles',
+          subtitle: 'Creative Technologist, Artist',
+          description: 'Java Developer, Installation/Experience design'
+        },
+        {
+          title: 'Why is it important?',
+          subtitle: 'Invited to bring our project to Maker\'s fair 2011.',
+          description: 'Pillow + generated a lot of positive feedback from the art shows attendees.'
+        }
+      ]
     }
   ]
 };
