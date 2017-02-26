@@ -1,5 +1,14 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { WorkPost } from "../+work/work.content";
+
+
+export interface WorkPost {
+  id: number,
+  title: string,
+  categories: Array<string>,
+  paragraph: string,
+  slug: string,
+  overview?: Array<any>,
+}
 
 @Component({
   selector: 'app-article-header',
