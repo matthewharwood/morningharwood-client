@@ -3,16 +3,16 @@
  */
 import { Action } from '@ngrx/store';
 
-export const INCREMENT = 'INCREMENT';
-export const DECREMENT = 'DECREMENT';
+export const ACTIVATE = 'ACTIVATE';
+export const DEACTIVATE = 'DEACTIVATE';
 
 
 export function counterReducer(state: boolean = false, action: Action) {
   switch (action.type) {
-    case INCREMENT:
+    case ACTIVATE:
       return true;
 
-    case DECREMENT:
+    case DEACTIVATE:
       return false;
 
     default:
