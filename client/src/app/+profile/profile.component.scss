@@ -1,0 +1,32 @@
+@import '../../assets/css/_variables';
+@import '../../assets/css/_mixins';
+@import '../../assets/css/_extends';
+
+article {
+  @extend %full-wh;
+  @include center-flex();
+}
+
+header {
+  text-align: center;
+}
+
+h1 {
+  @extend %default-headline;
+}
+
+// TODO: REFACTOR THIS BUTTON
+.action-button {
+  text-align: center;
+  padding: 19px 0;
+  background: $red-mh;
+  display: flex;
+  width: 182px;
+  color: $white-off;
+  text-decoration: none;
+  margin: 28px auto;
+  font-weight: normal;
+  border: solid 1px darken($red-mh, 10%);
+  justify-content: center;
+}
+
