@@ -9,13 +9,13 @@ import { Observable } from 'rxjs';
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent implements OnInit{
-  private counter: Observable<boolean>;
+  private keyboard: Observable<boolean>;
   public setKonami: boolean;
   constructor(private store: Store<AppState>) {
-    this.counter = store.select('counter');
+    this.keyboard = store.select('keyboard');
   }
 
   ngOnInit() {
-    this.counter.subscribe(x => this.setKonami = x)
+    this.keyboard.subscribe(x => this.setKonami = x)
   }
 }
