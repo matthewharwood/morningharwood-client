@@ -6,6 +6,8 @@ import { ModuleWithProviders } from "@angular/core";
 import { ArticleHeaderComponent } from '../article-header/article-header.component';
 import { WorkPostComponent } from './post/work-post.component';
 import { WorkPostService } from './post/work-post.service';
+import { SunDialDirective } from "../sun-dial/sun-dial.directive";
+import { SunDialModule } from "../sun-dial/sun-dial.module";
 
 export const routerConfig: Routes = [{
   path: '',
@@ -18,7 +20,7 @@ export const routerConfig: Routes = [{
 export const routing: ModuleWithProviders = RouterModule.forChild(routerConfig);
 
 @NgModule({
-  imports: [CommonModule, routing],
+  imports: [CommonModule, routing, SunDialModule],
   providers: [WorkPostService],
   declarations: [WorkComponent, ArticleHeaderComponent, WorkPostComponent],
   exports: [WorkComponent],

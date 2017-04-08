@@ -1,9 +1,11 @@
 /**
  * Created by matth on 2/25/2017.
  */
-import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
-import { ISunDial } from './sun-dial.interface';
-
+import { Component, ChangeDetectionStrategy, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { AppState, SunDial } from '../app.interface';
+import { Observable } from 'rxjs';
+import { PartsOfDay } from '../_handies/date'
 
 
 @Component({
@@ -12,6 +14,26 @@ import { ISunDial } from './sun-dial.interface';
   styleUrls: ['sun-dial.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class SunDialComponent {
+export class SunDialComponent implements OnInit {
+  private partOfDay: Observable<SunDial>;
+  public activeInputFieldIndex: SunDial;
+  public partOfDayLength: number[];
 
+  constructor(private store: Store<AppState>) {
+    this.partOfDay = store.select('sunDial');
+  }
+
+  ngOnInit() {
+    this.partOfDay.subscribe(x => {
+      this.activeInputFieldIndex = x;
+    });
+
+    this.setLength();
+
+  }
+
+  setLength(){
+    const partLength = Object.keys(PartsOfDay).length/2;
+    this.partOfDayLength = new Array((partLength)? partLength : partLength + 1);
+  }
 }

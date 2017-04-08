@@ -1,5 +1,9 @@
-<form>
-  <input type="radio" name="time" value="morning">
-  <input type="radio" name="time" value="day">
-  <input type="radio" name="time" value="night">
+<form [sunDial]="activeInputFieldIndex">
+  <h1>{{activeInputFieldIndex}}</h1>
+  <input *ngFor="let item of partOfDayLength; let i = index"
+         type="radio"
+         sunDialChild
+         [checked]="activeInputFieldIndex === i"
+         name="time"
+         [value]="i">
 </form>
