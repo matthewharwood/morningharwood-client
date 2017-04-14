@@ -110,6 +110,9 @@ html, body {
   padding: 0;
   font-family: "Times New Roman", Serif;
 }
+body {
+  font-size: 100%;
+}
 .router-wrap {
   height: 100%;
   width: 100%;

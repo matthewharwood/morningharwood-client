@@ -2,19 +2,50 @@
 @import '../../../assets/css/_mixins';
 @import '../../../assets/css/_extends';
 
-work-post {
-  background: #333;
+
+@mixin color-filter($color) {
+  $local-bg: $white-off;
+  $local-copy: $black-mh;
+  $local-link: $blue-link;
+
+  &.#{$color}-filter {
+    @if $color == 'sepia' {
+      $local-bg: $sepia-bg;
+      $local-copy: $sepia-copy;
+      $local-link: $sepia-link;
+    } @else if $color == 'dark' {
+      $local-bg: $dark-bg;
+      $local-copy: $dark-copy;
+      $local-link: $dark-link;
+    } @else {
+      $local-bg: $light-bg;
+      $local-copy: $light-copy;
+      $local-link: $light-link;
+    }
+
+    background-color: $local-bg;
+    color: #{$color}-copy;
+    border-left: 36px solid darken($local-bg, 5%);
+    border-right: 36px solid darken($local-bg, 5%);
+
+    a {
+      color: $local-link
+    }
+  }
 }
 
+
+
 .main {
-  background: #333;
+  position: relative;
   min-height: 100vh;
-  font-size: 28px;
-  color: #ccc;
   width: 100%;
-  border-left: 36px solid #222;
-  border-right: 36px solid #222;
-  padding: 72px;
+  padding: ms(3, $thread: aug);
+
+  $partOfDayColors: 'light', 'dark', 'sepia';
+  @for $i from 1 through length($partOfDayColors) {
+    @include color-filter(nth($partOfDayColors, $i));
+  }
 }
 
 article {
@@ -35,7 +66,7 @@ article {
 }
 
 h1 {
-  font-size: 1.6em;
+  font-size: $headline;
   line-height: 1.25em;
   width: 100%;
   margin: 36px 0;
@@ -44,7 +75,7 @@ h1 {
 
 p {
   line-height: 1.6em;
-  font-size: 1em;
+  font-size: $paragraph;
   margin: 0 0 36px 0;
   widows: 3;
   orphans: 3;

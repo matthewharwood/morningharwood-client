@@ -1,9 +1,16 @@
-<form [sunDial]="activeInputFieldIndex">
-  <h1>{{activeInputFieldIndex}}</h1>
-  <input *ngFor="let item of partOfDayLength; let i = index"
+<form [sunDial]="activeIndex">
+  <h1>{{activeIndex}}</h1>
+  <ul>
+    <li *ngFor="let item of data; let idx = index">
+      <input
          type="radio"
          sunDialChild
-         [checked]="activeInputFieldIndex === i"
+         [checked]="activeIndex === idx"
          name="time"
-         [value]="i">
+         [value]="idx"
+         id="time-of-day-{{idx}}">
+
+      <label for="time-of-day-{{idx}}">time-of-day-{{idx}}</label>
+    </li>
+  </ul>
 </form>

@@ -1,13 +1,53 @@
-$phi: 1.618;
+@import './_modularscale';
 
 $dark-black-mh: #333;
 $black-mh: #555;
 $gray-mh: #888;
+$gray-light-mh: #ccc;
 $red-mh: tomato;
 $default-text: $black-mh;
-$white-off: #f7f7f7;
 $bold: 700;
 $default-bleed: 72 * 1px;
 $hi-number: 420 * 1px;
 $display-font-family: 'pompadourblack';
 $sans-default-family: 'Noto Sans', sans-serif;
+$blue-link: #0095dd;
+$white: #fff;
+$white-off: #f7f7f7;
+
+//sepia
+$sepia-bg: #f4ecd8;
+$sepia-copy: #5b4636;
+$sepia-link: $blue-link ;
+
+
+//dark
+$dark-bg: $dark-black-mh;
+$dark-copy: $white-off;
+$dark-link: $blue-link;
+
+//light
+$light-bg: $white-off;
+$light-copy: $black-mh;
+$light-link: $blue-link;
+
+$modularscale: (
+  base: 1em,
+  ratio: $golden,
+  aug: (
+    ratio: $major-third
+  )
+);
+
+// FONT SIZES
+$headline: ms(5, $thread: aug);
+$paragraph: ms(1);
+
+
+// z-index multipliers
+$primary: 1000;
+$secondary: 100;
+$tertiary: 10;
+
+$ui: 1000;
+$layer-1: 100;

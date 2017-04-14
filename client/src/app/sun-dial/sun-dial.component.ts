@@ -27,24 +27,25 @@ import { PartsOfDay } from '../_handies/date'
 })
 export class SunDialComponent implements OnInit {
   private partOfDay: Observable<SunDial>;
-  public activeInputFieldIndex: SunDial;
-  public partOfDayLength: number[];
+  public activeIndex: SunDial;
+  public data: number[];
 
   constructor(private store: Store<AppState>) {
     this.partOfDay = store.select('sunDial');
   }
 
   ngOnInit() {
-    this.partOfDay.subscribe(x => {
-      this.activeInputFieldIndex = x;
+    this.partOfDay.subscribe(sunDial => {
+      this.activeIndex = sunDial;
     });
 
-    this.setLength();
+    this.data = SunDialComponent.mapTSEnumToArray(PartsOfDay);
 
   }
 
-  setLength(){
-    const partLength = Object.keys(PartsOfDay).length/2;
-    this.partOfDayLength = new Array((partLength)? partLength : partLength + 1);
+
+  static mapTSEnumToArray(enumerableObj:any):Array<number>{
+    const partLength = Object.keys(enumerableObj).length/2;
+    return new Array((partLength)? partLength : partLength + 1);
   }
 }
