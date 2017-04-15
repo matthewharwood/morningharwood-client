@@ -33,7 +33,6 @@ export class KonamiDirective implements OnInit, OnDestroy {
     const buffered = keys.bufferCount(11, 1);
     buffered.subscribe(
       buf => {
-        console.log(buf);
         buf.every((e, i) =>  e.keyCode === konami[i])
             ? this.store.dispatch({ type: ACTIVATE })
             : this.store.dispatch({ type: DEACTIVATE });

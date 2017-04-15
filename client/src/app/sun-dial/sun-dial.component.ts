@@ -28,7 +28,7 @@ import { PartsOfDay } from '../_handies/date'
 export class SunDialComponent implements OnInit {
   private partOfDay: Observable<SunDial>;
   public activeIndex: SunDial;
-  public data: number[];
+  public data: PartsOfDay[];
 
   constructor(private store: Store<AppState>) {
     this.partOfDay = store.select('sunDial');
@@ -39,7 +39,7 @@ export class SunDialComponent implements OnInit {
       this.activeIndex = sunDial;
     });
 
-    this.data = SunDialComponent.mapTSEnumToArray(PartsOfDay);
+    this.data = ['Morning', 'Afternoon', 'Evening'];
 
   }
 

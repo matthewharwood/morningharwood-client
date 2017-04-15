@@ -1,5 +1,8 @@
+@import '../../assets/css/variables';
+
 :host {
   position: fixed;
+  z-index: $primary;
 }
 
 input[type=radio]{

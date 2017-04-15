@@ -1,16 +1,16 @@
-<form [sunDial]="activeIndex">
-  <h1>{{activeIndex}}</h1>
+<form [sunDial]="partOfDay | async">
+  <h1>{{partOfDay | async}}</h1>
   <ul>
     <li *ngFor="let item of data; let idx = index">
       <input
          type="radio"
          sunDialChild
-         [checked]="activeIndex === idx"
+         [checked]="activeIndex === idx | async"
          name="time"
-         [value]="idx"
+         [value]="item"
          id="time-of-day-{{idx}}">
 
-      <label for="time-of-day-{{idx}}">time-of-day-{{idx}}</label>
+      <label for="time-of-day-{{idx}}">{{item}}</label>
     </li>
   </ul>
 </form>

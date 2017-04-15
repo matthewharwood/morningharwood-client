@@ -22,7 +22,7 @@ export class SunDialChildDirective {
 
   @HostListener('click', ['$event.target'])
   changePartOfDay(evt){
-    this.store.dispatch({ type: PartsOfDay[evt.value] });
+    this.store.dispatch({ type: evt.value });
   }
 
 }

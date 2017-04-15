@@ -7,5 +7,5 @@ export interface AppState {
 }
 
 export interface SunDial {
-  activeInputFieldIndex: number,
+  activeInputFieldIndex: string,
 }

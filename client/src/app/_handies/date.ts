@@ -2,11 +2,11 @@
  * Created by matth on 2/26/2017.
  */
 
-export enum PartsOfDay {
-  MORNING,
-  EVENING,
-  AFTERNOON,
-}
+
+export type PartsOfDay =
+  "Morning"
+  | "Evening"
+  | "Afternoon"
 
 const isMorning = (h) => (h >= 6 && h <= 11);
 const isAfterNoon = (h) => (h >= 12 && h <= 16);
@@ -16,10 +16,10 @@ export function getPartOfDay(date: Date): (PartsOfDay) {
   const hours = date.getHours();
 
   if (isEvening(hours)) {
-    return PartsOfDay.EVENING;
+    return "Evening";
   } else if (isMorning(hours)) {
-    return PartsOfDay.MORNING;
+    return "Morning";
   } else if (isAfterNoon(hours)) {
-    return PartsOfDay.AFTERNOON
+    return "Afternoon"
   }
 }

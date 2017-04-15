@@ -18,16 +18,16 @@ export function keyboardReducer(state: boolean = false, action: Action) {
   }
 }
 
-export function sunDialReducer(state: number = 0, action: Action) {
+export function sunDialReducer(state: string = '', action: Action) {
   switch (action.type) {
-    case PartsOfDay[PartsOfDay.MORNING]:
-      return PartsOfDay.MORNING;
+    case 'Morning':
+      return 'Morning';
 
-    case PartsOfDay[PartsOfDay.AFTERNOON]:
-      return PartsOfDay.AFTERNOON;
+    case 'Afternoon':
+      return 'Afternoon';
 
-    case PartsOfDay[PartsOfDay.EVENING]:
-      return PartsOfDay.EVENING;
+    case 'Evening':
+      return 'Evening';
 
     default:
       return state;
