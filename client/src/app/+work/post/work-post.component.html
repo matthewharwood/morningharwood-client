@@ -1,5 +1,6 @@
 <sun-dial></sun-dial>
-<div class="main" [ngClass]="activeFilter">
+
+<div class="main" [ngClass]="(partOfDay | async)?.filterClass">
 
   <article>
     <h1>Stanley a previsualization tool for Nike Jordan</h1>

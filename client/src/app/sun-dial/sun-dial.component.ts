@@ -5,7 +5,7 @@ import { Component, ChangeDetectionStrategy, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { AppState, SunDial } from '../app.interface';
 import { Observable } from 'rxjs';
-import { PartsOfDay } from '../_handies/date'
+import { PartsOfDay, PartsOfDayEnum } from '../_handies/date'
 
 /**
  *  @whatItDoes Detects the time of day and offers a set of directive and components to fetch,hook and override the
@@ -27,7 +27,7 @@ import { PartsOfDay } from '../_handies/date'
 })
 export class SunDialComponent implements OnInit {
   private partOfDay: Observable<SunDial>;
-  public activeIndex: SunDial;
+  public activeIndex: any;
   public data: PartsOfDay[];
 
   constructor(private store: Store<AppState>) {
@@ -35,11 +35,7 @@ export class SunDialComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.partOfDay.subscribe(sunDial => {
-      this.activeIndex = sunDial;
-    });
-
-    this.data = ['Morning', 'Afternoon', 'Evening'];
+    this.data = (<any>Object).values(PartsOfDayEnum);
 
   }
 

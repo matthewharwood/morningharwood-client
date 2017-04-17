@@ -2,7 +2,7 @@
  * Created by matth on 2/23/2017.
  */
 import { Action } from "@ngrx/store";
-import { PartsOfDay } from "./date";
+import { PartsOfDay, PartsOfDayEnum } from "./date";
 export const ACTIVATE = 'ACTIVATE';
 export const DEACTIVATE = 'DEACTIVATE';
 
@@ -17,17 +17,44 @@ export function keyboardReducer(state: boolean = false, action: Action) {
       return state;
   }
 }
+// case 'Morning':
+// return {'sepia-filter': true};
+// case 'Afternoon':
+// return {'light-filter': true};
+// case 'Evening':
+// return {'dark-filter': true};
+// default:
+// return {'light-filter': true};
 
-export function sunDialReducer(state: string = '', action: Action) {
+let initSunDialState = {
+  selectedLabel: PartsOfDayEnum.Morning,
+  options: (<any>Object).values(PartsOfDayEnum),
+  filterClass:  {'sepia-filter': true},
+};
+
+export function sunDialReducer(state: any = '', action: Action) {
+  console.log(action.type, 'wtf');
   switch (action.type) {
-    case 'Morning':
-      return 'Morning';
+    case PartsOfDayEnum.Morning:
+      return {
+        selectedLabel: PartsOfDayEnum.Morning,
+        options: (<any>Object).values(PartsOfDayEnum),
+        filterClass:  {'sepia-filter': true},
+      };
 
-    case 'Afternoon':
-      return 'Afternoon';
+    case PartsOfDayEnum.Afternoon:
+      return {
+        selectedLabel: PartsOfDayEnum.Afternoon,
+        options: (<any>Object).values(PartsOfDayEnum),
+        filterClass:  {'light-filter': true},
+      };
 
-    case 'Evening':
-      return 'Evening';
+    case PartsOfDayEnum.Evening:
+      return {
+        selectedLabel: PartsOfDayEnum.Evening,
+        options: (<any>Object).values(PartsOfDayEnum),
+        filterClass:  {'dark-filter': true},
+      };
 
     default:
       return state;

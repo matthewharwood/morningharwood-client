@@ -14,29 +14,12 @@ import { Observable } from 'rxjs';
 })
 export class WorkPostComponent implements OnInit{
   private partOfDay: Observable<SunDial>;
-  public activeFilter: any;
 
   constructor(private store: Store<AppState>) {
     this.partOfDay = store.select('sunDial');
+    // (partOfDay | async)?.filterClas
   }
 
-  ngOnInit() {
-    this.partOfDay.subscribe(partOfDay => {
-      this.activeFilter = WorkPostComponent.setFilterType(partOfDay); // refactor this mutation
-    });
-  }
-
-  static setFilterType(partOfDay) {
-    switch (partOfDay) {
-      case 'Morning':
-        return {'light-filter': true};
-      case 'Afternoon':
-        return {'sepia-filter': true};
-      case 'Evening':
-        return {'dark-filter': true};
-      default:
-        return {'light-filter': true};
-    }
-  }
+  ngOnInit() {}
 }
 
