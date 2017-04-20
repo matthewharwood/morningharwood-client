@@ -1,11 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { StoreModule } from '@ngrx/store';
 import { keyboardReducer, sunDialReducer } from './_handies/sdk';
-
+import { Meta } from '@angular/platform-browser';
 import { Routes, RouterModule } from "@angular/router";
 import { ModuleWithProviders } from "@angular/core";
 import { MhCanvasDirective } from './mh-splash-bg/mh-canvas.directive';
@@ -38,4 +38,13 @@ export const routing: ModuleWithProviders = RouterModule.forRoot(APP_ROUTES);
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule implements OnInit{
+  constructor(private metaService: Meta) {}
+
+  ngOnInit() {
+    this.metaService.addTags([
+      { name: 'twitter:title', content: 'Good Morning Harwood' },
+      { property: 'og:title', content: 'Good Morning Harwood' }
+    ]);
+  }
+}
