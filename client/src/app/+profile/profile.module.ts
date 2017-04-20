@@ -1,15 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ProfileComponent } from "./profile.component";
-import { Routes, RouterModule } from "@angular/router";
-import { ModuleWithProviders } from "@angular/core";
+import { routing } from "./profile.route";
 
-export const routerConfig: Routes = [{
-  path: '',
-  component: ProfileComponent
-}];
-
-export const routing: ModuleWithProviders = RouterModule.forChild(routerConfig);
 
 @NgModule({
   imports: [CommonModule, routing],

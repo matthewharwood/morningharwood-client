@@ -3,17 +3,9 @@
  */
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Routes, RouterModule } from "@angular/router";
-import { ModuleWithProviders } from "@angular/core";
 import { AdminComponent } from './admin.component'
 import { StoreModule } from "@ngrx/store";
-
-export const routerConfig: Routes = [{
-  path: '',
-  component: AdminComponent
-}];
-
-export const routing: ModuleWithProviders = RouterModule.forChild(routerConfig);
+import { routing } from "./admin.route";
 
 @NgModule({
   imports: [
