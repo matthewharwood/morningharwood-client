@@ -15,9 +15,10 @@ import { KonamiDirective } from './keyboard/konami.directive'
 const APP_ROUTES: Routes = [
   { path: '',   redirectTo: '/menu', pathMatch: 'full' },
   { path: 'menu', loadChildren:  './+menu/menu.module#MenuRouteModule' },
-  { path: 'notes', loadChildren:  './+notes/notes.module#NotesRouteModule' },
+  { path: 'note', loadChildren:  './+note/note.module#NoteRouteModule' },
   { path: 'profile', loadChildren:  './+profile/profile.module#ProfileRouteModule' },
-  { path: 'work', loadChildren:  './+work/work.module#WorkRouteModule' }
+  { path: 'work', loadChildren:  './+work/work.module#WorkRouteModule' },
+  { path: 'admin', loadChildren:  './+admin/admin.module#AdminRouteModule' }
 ];
 
 export const routing: ModuleWithProviders = RouterModule.forRoot(APP_ROUTES);
@@ -33,7 +34,7 @@ export const routing: ModuleWithProviders = RouterModule.forRoot(APP_ROUTES);
     FormsModule,
     HttpModule,
     routing,
-    StoreModule.provideStore({keyboard: keyboardReducer, sunDial: sunDialReducer })
+    StoreModule.provideStore({keyboard: keyboardReducer, sunDial: sunDialReducer }),
   ],
   bootstrap: [AppComponent]
 })

@@ -33,7 +33,6 @@ let initSunDialState = {
 };
 
 export function sunDialReducer(state: any = '', action: Action) {
-  console.log(action.type, 'wtf');
   switch (action.type) {
     case PartsOfDayEnum.Morning:
       return {

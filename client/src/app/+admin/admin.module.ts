@@ -1,20 +1,29 @@
+/**
+ * Created by matth on 4/19/2017.
+ */
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { NotesComponent } from "./notes.component";
 import { Routes, RouterModule } from "@angular/router";
 import { ModuleWithProviders } from "@angular/core";
+import { AdminComponent } from './admin.component'
+import { StoreModule } from "@ngrx/store";
 
 export const routerConfig: Routes = [{
   path: '',
-  component: NotesComponent
+  component: AdminComponent
 }];
 
 export const routing: ModuleWithProviders = RouterModule.forChild(routerConfig);
 
 @NgModule({
-  imports: [CommonModule, routing],
+  imports: [
+    CommonModule,
+    routing,
+    StoreModule.provideStore({}),
+  ],
   providers: [],
-  declarations: [NotesComponent],
-  exports: [NotesComponent],
+  declarations: [AdminComponent],
+  exports: [AdminComponent],
 })
-export class NotesRouteModule { }
+export class AdminRouteModule {
+}

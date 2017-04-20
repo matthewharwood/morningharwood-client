@@ -4,11 +4,11 @@
 import {Component, OnInit} from "@angular/core";
 
 @Component({
-  selector: 'notes-route',
-  templateUrl: 'notes.component.html',
-  styleUrls: ['notes.component.scss'],
+  selector: 'note-route',
+  templateUrl: 'note.component.html',
+  styleUrls: ['note.component.scss'],
 })
-export class NotesComponent implements OnInit{
+export class NoteComponent implements OnInit{
 
   ngOnInit() {
     console.log('such wow from +profile')
