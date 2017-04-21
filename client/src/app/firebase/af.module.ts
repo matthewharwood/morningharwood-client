@@ -6,11 +6,13 @@
 import { NgModule } from "@angular/core";
 import { AngularFireModule } from 'angularfire2';
 import { firebaseConfig } from "./config";
+import { myFirebaseAuthConfig } from "./auth";
+
 
 @NgModule(
   {
     imports: [
-      AngularFireModule.initializeApp(firebaseConfig),
+      AngularFireModule.initializeApp(firebaseConfig, myFirebaseAuthConfig),
     ],
     providers: [],
     declarations: [],

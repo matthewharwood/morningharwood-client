@@ -21,6 +21,7 @@ export class WorkComponent implements OnInit{
   }
   ngOnInit() {
     this.works = this._af.database.list('/work');
+    this.works.subscribe(console.log)
   }
 }
 
