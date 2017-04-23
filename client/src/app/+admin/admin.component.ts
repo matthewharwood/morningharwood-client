@@ -16,4 +16,4 @@ import { Component, ChangeDetectionStrategy } from "@angular/core";
 })
 export class AdminComponent {
 
-};
+}

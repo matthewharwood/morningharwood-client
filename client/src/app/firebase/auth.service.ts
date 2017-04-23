@@ -1,13 +1,13 @@
-/**
- * Created by matth on 4/19/2017.
- */
-import { Injectable } from "@angular/core";
-import { CanActivate } from "@angular/router";
+import { Injectable } from '@angular/core';
+import { Resolve } from '@angular/router';
+import { AF } from "./login.service";
 
 @Injectable()
-export class AuthService implements CanActivate{
-  canActivate() {
-    console.log('yup');
-    return true;
+export class CanActivateViaAuthGuard implements Resolve<any> {
+  constructor(private authService: AF) {}
+
+  resolve() {
+    return this.authService.loginWithGoogle()
+      .catch(err => err);
   }
 }
