@@ -3,20 +3,19 @@
  */
 
 import { Injectable } from "@angular/core";
-import { AngularFire, AuthMethods, AuthProviders } from "angularfire2";
+import { AngularFire } from "angularfire2";
+import { myFirebaseAuthConfig } from "./auth";
+import { Router } from "@angular/router";
 
 @Injectable()
 export class AF {
-  constructor(public af: AngularFire) {}
+  constructor(public af: AngularFire, private router: Router) {}
   /**
    * Logs in the user
    * @returns {firebase.Promise<FirebaseAuthState>}
    */
   loginWithGoogle() {
-    return this.af.auth.login({
-      provider: AuthProviders.Google,
-      method: AuthMethods.Popup,
-    });
+    return this.af.auth.login(myFirebaseAuthConfig);
   }
   /**
    * Logs out the current user
