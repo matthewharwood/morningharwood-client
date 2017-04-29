@@ -7,16 +7,32 @@ import { ModuleWithProviders } from "@angular/core";
 import { LoginComponent } from "../login/login.component";
 import { SignupComponent } from "../signup/signup.component";
 import { CanActivateViaAuthGuard } from "../firebase/auth.service";
+import { createStringEnum } from "../_handies/stringToEnum";
+
+
+export type RoutePathType =
+  | 'login'
+  | 'dashboard'
+  | 'login'
+  | 'signup'
+
+export const RouteList = createStringEnum([
+  'login',
+  'dashboard',
+  'login',
+  'signup',
+]);
+
 
 export const routerConfig: Routes = [
-  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  { path: '', redirectTo: RouteList.login, pathMatch: 'full' },
   {
-    path: 'dashboard',
+    path: RouteList.dashboard,
     component: AdminComponent,
-    resolve: [CanActivateViaAuthGuard],
+    canActivate: [CanActivateViaAuthGuard],
   },
-  {path: 'login', component: LoginComponent},
-  {path: 'signup', component: SignupComponent},
+  {path: RouteList.login, component: LoginComponent},
+  {path: RouteList.signup, component: SignupComponent},
 ];
 
 export const routing: ModuleWithProviders = RouterModule.forChild(routerConfig);

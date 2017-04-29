@@ -1,7 +1,7 @@
 /**
  * Created by matth on 4/19/2017.
  */
-import { Component, ChangeDetectionStrategy } from "@angular/core";
+import { Component, ChangeDetectionStrategy, OnInit } from "@angular/core";
 
 /**
  * @ngModule AdminRouteModule
@@ -15,5 +15,6 @@ import { Component, ChangeDetectionStrategy } from "@angular/core";
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AdminComponent {
+  
 
 }

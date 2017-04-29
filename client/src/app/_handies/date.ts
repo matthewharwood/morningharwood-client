@@ -1,7 +1,7 @@
 /**
  * Created by matth on 2/26/2017.
  */
-
+import { createStringEnum } from "./stringToEnum";
 
 export type PartsOfDay =
   "Morning"
@@ -13,13 +13,7 @@ export type ColorFilters =
   | "sepia"
   | "dark"
 
-/** Utility function to create a K:V from a list of strings */
-function createStringEnum<T extends string>(o: Array<T>): {[K in T]: K} {
-  return o.reduce((res, key) => {
-    res[key] = key;
-    return res;
-  }, Object.create(null));
-}
+
 
 export const PartsOfDayEnum = createStringEnum([
   'Morning',
