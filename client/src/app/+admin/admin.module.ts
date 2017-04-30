@@ -3,14 +3,15 @@
  */
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AdminComponent } from './admin.component'
-import { StoreModule } from "@ngrx/store";
-import { routing } from "./admin.route";
-import { SignupComponent } from "../signup/signup.component";
-import { LoginComponent } from "../login/login.component";
-import { AngularFireClientModule } from "../firebase/af.module";
-import { AF } from "../firebase/login.service";
-import { CanActivateViaAuthGuard } from "../firebase/auth.service";
+import { AdminComponent } from './admin.component';
+import { StoreModule } from '@ngrx/store';
+import { routing } from './admin.route';
+import { SignupComponent } from '../signup/signup.component';
+import { LoginComponent } from '../login/login.component';
+import { AngularFireClientModule } from '../firebase/af.module';
+import { AF } from '../firebase/login.service';
+import { CanActivateViaAuthGuard } from '../firebase/auth.service';
+import { RemoteAdmin } from './admin.remote';
 
 @NgModule({
   imports: [
@@ -19,8 +20,19 @@ import { CanActivateViaAuthGuard } from "../firebase/auth.service";
     StoreModule.provideStore({}),
     AngularFireClientModule,
   ],
-  providers: [AF, CanActivateViaAuthGuard],
-  declarations: [AdminComponent, LoginComponent, SignupComponent],
-  exports: [AdminComponent],
+  providers: [
+    AF,
+    CanActivateViaAuthGuard,
+    RemoteAdmin,
+  ],
+  declarations: [
+    AdminComponent,
+    LoginComponent,
+    SignupComponent,
+  ],
+  exports: [
+    AdminComponent,
+  ],
 })
-export class AdminRouteModule {}
+export class AdminRouteModule {
+}

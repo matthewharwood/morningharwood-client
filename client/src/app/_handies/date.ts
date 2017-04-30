@@ -1,7 +1,7 @@
 /**
  * Created by matth on 2/26/2017.
  */
-import { createStringEnum } from "./stringToEnum";
+
 
 export type PartsOfDay =
   "Morning"
@@ -14,12 +14,13 @@ export type ColorFilters =
   | "dark"
 
 
+export const PartsOfDayEnum = {
+  Morning: 'Morning' as 'Morning',
+  Afternoon: 'Afternoon' as 'Afternoon',
+  Evening: 'Evening' as 'Evening',
+};
 
-export const PartsOfDayEnum = createStringEnum([
-  'Morning',
-  'Afternoon',
-  'Evening',
-]);
+// type PartsOfDayEnum = (typeof PartsOfDayEnum)[keyof typeof PartsOfDayEnum];
 
 const isMorning = (h:number):boolean  => (h >= 6 && h <= 11);
 const isAfterNoon = (h:number):boolean  => (h >= 12 && h <= 16);
