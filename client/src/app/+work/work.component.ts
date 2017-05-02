@@ -4,6 +4,7 @@
 import { Component, OnInit } from "@angular/core";
 import { POST_TABLE } from './work.content';
 import { AngularFire, FirebaseListObservable } from 'angularfire2';
+import { ActivatedRoute } from '@angular/router';
 
 
 
@@ -21,7 +22,8 @@ export class WorkComponent implements OnInit{
   }
   ngOnInit() {
     this.works = this._af.database.list('/work');
-    this.works.subscribe(console.log)
+    this.works.subscribe(console.log);
+
   }
 }
 
