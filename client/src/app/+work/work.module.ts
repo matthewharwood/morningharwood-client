@@ -8,7 +8,7 @@ import { routing } from './work.route';
 import { WorkComponent } from './work.component';
 import { WorkPostComponent } from '../+work-post/work-post.component';
 import { AngularFireClientModule } from 'app/firebase/af.module';
-import { WorkPostResolve } from './work.resolve';
+import { WorkPostResolve } from '../+work-post/work.resolve';
 
 
 @NgModule({
