@@ -8,7 +8,7 @@ import { WorkPostResolve } from './work.resolve';
 
 
 export const routerConfig: Routes = [{
-  path: ':id',
+  path: ':slug',
   component: WorkPostComponent,
   resolve: {
     remote: WorkPostResolve

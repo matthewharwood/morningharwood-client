@@ -10,15 +10,16 @@ import { ActivatedRoute } from '@angular/router';
   selector: 'work-post',
   templateUrl: 'work-post.component.html',
   styleUrls: ['work-post.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class WorkPostComponent implements OnInit{
   @Input('store') partOfDay: Observable<SunDial>;
-
+  public obs$;
   constructor(private route: ActivatedRoute){}
 
   ngOnInit(){
-    console.log(this.route.snapshot.data);
+    this.route.snapshot.data.remote.subscribe(x => {
+      this.obs$ = x[0];
+    });
   }
 
 }
