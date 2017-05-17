@@ -36,3 +36,40 @@
   align-items: center;
   justify-content: center;
 }
+
+$mediaRequestSizesSm: 576 * 1;
+
+
+// Small devices (landscape phones, 576px and up)
+//@mixin bp($point) {
+//  $xs: "";
+//  $sm: "(min-width: 576px)";
+//  $md: "(min-width: 768px)";
+//  $lg: "(min-width: 992px)";
+//  $xl: "(min-width: 1200px)";
+//
+//  @if $point == sm {
+//    { @content; }
+//  }
+//  @else if $point == sm {
+//    @media #{$sm} { @content; }
+//  }
+//  @else if $point == md {
+//    @media #{$sm} { @content; }
+//  }
+//  @else if $point == lg {
+//    @media #{$sm} { @content; }
+//  }
+//  @else if $point == xl {
+//    @media #{$sm} { @content; }
+//  }
+//}
+
+//// Medium devices (tablets, 768px and up)
+//@media (min-width: 768px) { ... }
+//
+//// Large devices (desktops, 992px and up)
+//@media (min-width: 992px) { ... }
+//
+//// Extra large devices (large desktops, 1200px and up)
+//@media (min-width: 1200px) { ... }

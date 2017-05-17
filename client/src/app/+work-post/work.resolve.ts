@@ -72,7 +72,7 @@ actions and feelings and translate it into
 the digital world by making something
 insignificant such as a “Like” in Facebook
 into something that is meaningful and
-significant to somebody.◊`
+significant to somebody.◊`;
 
 @Injectable()
 export class WorkPostResolve implements Resolve<any> {

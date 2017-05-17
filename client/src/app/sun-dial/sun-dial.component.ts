@@ -26,8 +26,7 @@ import { PartsOfDay, PartsOfDayEnum } from '../_handies/date'
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SunDialComponent implements OnInit {
-  private partOfDay: Observable<SunDial>;
-  public activeIndex: any;
+  public partOfDay: Observable<SunDial>;
   public data: PartsOfDay[];
 
   constructor(private store: Store<AppState>) {

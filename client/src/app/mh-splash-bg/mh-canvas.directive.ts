@@ -1,4 +1,4 @@
-import {Directive, OnInit, Renderer, ElementRef} from '@angular/core';
+import { Directive, OnInit, ElementRef, Renderer2 } from '@angular/core';
 
 
 
@@ -31,7 +31,7 @@ const TAG_NAMES = {
 })
 export class MhCanvasDirective implements OnInit{
   private hostEl: ElementRef;
-  constructor(private elRef:ElementRef, private renderer:Renderer) { }
+  constructor(private elRef:ElementRef, private renderer:Renderer2) { }
   ngOnInit() {
     this.hostEl = MhCanvasDirective.testCanvas(this.renderer.selectRootElement(this.elRef), TAG_NAMES.CANVAS);
     this.hostEl.nativeElement.width = window['innerWidth'];
@@ -130,6 +130,7 @@ export class MhCanvasDirective implements OnInit{
   }
 
   static testGl(context) : boolean {
+    console.log( !!(context));
     return !!(context);
   }
 }

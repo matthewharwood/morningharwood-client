@@ -5,21 +5,21 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { StoreModule } from '@ngrx/store';
 import { keyboardReducer, sunDialReducer } from './_handies/sdk';
-import { MhCanvasDirective } from './mh-splash-bg/mh-canvas.directive';
 import { KonamiDirective } from './keyboard/konami.directive'
 import { routing } from "./app.route";
+import { MhPicModule } from './mh-pic/mh-pic.module';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    MhCanvasDirective,
-    KonamiDirective
+    KonamiDirective,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
+    MhPicModule,
     routing,
     StoreModule.provideStore({keyboard: keyboardReducer, sunDial: sunDialReducer }),
   ],
