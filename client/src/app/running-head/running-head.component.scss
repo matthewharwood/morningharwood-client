@@ -17,7 +17,7 @@ $hover: $red-mh;
   right: 16px;
   background-size: auto 50%;
 
-  @include bp(large) {
+  @include bp2(4) {
     border-radius: 0;
     border: none;
     width: 400px;
@@ -55,7 +55,7 @@ dd {
   padding-left: 24px;
   position: relative;
 
-  @include bp(large) {
+  @include bp2(4) {
     @include show(block);
     color: $text;
   }

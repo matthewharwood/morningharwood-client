@@ -14,7 +14,8 @@ $hover: $red-mh;
   width: 100%;
   z-index: 10;
 
-  @include bp(large) {
+
+  @include bp2(4) {
     display: flex;
     height: 100%;
     max-width: 100%;
