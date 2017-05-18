@@ -12,7 +12,7 @@ $article-header-bg: $white-off;
   text-align: center;
   background: $article-header-bg;
 
-  @include bp(large) {
+  @include bp2(4) {
     @include center-flex();
   }
 }
@@ -29,7 +29,7 @@ p {
 h4 {
   padding: 0 36px;
 
-  @include bp(large){
+  @include bp2(4) {
     padding: 0;
   }
 }
@@ -41,7 +41,7 @@ h4 {
   white-space: nowrap;
 
   &::before {
-    @include bp(large) {
+    @include bp2(4) {
       content: '';
       display: inline-block;
       height: 100%;
@@ -92,8 +92,6 @@ h4 {
   padding: 16px 52px 0 52px;
 }
 
-@include bp(large){}
-
 .title-wrapper {
   display: block;
   padding: 16px 32px 0 32px;
@@ -103,7 +101,7 @@ h4 {
     font-weight: normal;
     text-align: center;
 
-    @include bp(large){
+    @include bp2(4) {
       font-size: 72px;
     }
   }
