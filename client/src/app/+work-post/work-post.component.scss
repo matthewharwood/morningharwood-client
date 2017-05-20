@@ -2,7 +2,6 @@
 @import '../../assets/css/_mixins';
 @import '../../assets/css/_extends';
 
-
 @mixin color-filter($color) {
   $local-bg: $white-off;
   $local-copy: $black-mh;
@@ -34,13 +33,13 @@
   }
 }
 
-
-
 .main {
+  border-left: 36px solid transparent;
+  border-right: 36px solid transparent;
   position: relative;
   min-height: 100vh;
-  width: 100%;
   padding: ms(3, $thread: aug);
+  width: 100%;
 
   $partOfDayColors: 'light', 'dark', 'sepia';
   @for $i from 1 through length($partOfDayColors) {

@@ -23,7 +23,6 @@ export class SunDialDirective implements OnInit, OnChanges {
   constructor(private store: Store<AppState>){}
 
   ngOnInit() {
-    //TODO (mharwood) new Date is state so remove that.
     this.currentPartOfDay = getPartOfDay(new Date());
     this.store.dispatch({ type: this.currentPartOfDay });
   }

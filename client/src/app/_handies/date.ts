@@ -20,8 +20,6 @@ export const PartsOfDayEnum = {
   Evening: 'Evening' as 'Evening',
 };
 
-// type PartsOfDayEnum = (typeof PartsOfDayEnum)[keyof typeof PartsOfDayEnum];
-
 const isMorning = (h:number):boolean  => (h >= 6 && h <= 11);
 const isAfterNoon = (h:number):boolean  => (h >= 12 && h <= 16);
 const isEvening = (h:number):boolean  => (h >= 17 || h <= 5);
@@ -30,6 +28,7 @@ export function getPartOfDay(date: Date): (PartsOfDay) {
   const hours = date.getHours();
 
   if (isEvening(hours)) {
+    console.log('wtf');
     return PartsOfDayEnum.Evening;
   } else if (isAfterNoon(hours)) {
     return PartsOfDayEnum.Afternoon
