@@ -23,7 +23,7 @@
     }
 
     background-color: $local-bg;
-    color: #{$color}-copy;
+    color:  $local-copy;
     border-left: 36px solid darken($local-bg, 5%);
     border-right: 36px solid darken($local-bg, 5%);
 

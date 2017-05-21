@@ -13,7 +13,7 @@ export const routerConfig: Routes = [{
   component: WorkPostComponent,
   resolve: {
     remote: WorkPostResolve,
-    // ui: WorkPostUIResolve,
+    ui: WorkPostUIResolve,
   }
 }];
 

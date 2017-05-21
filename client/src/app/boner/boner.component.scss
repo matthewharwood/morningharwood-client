@@ -18,7 +18,7 @@ $rotation: 30deg;
   transform: rotate(-$rotation);
   width: $boner-width/2;
 
-  @include bp2(4) {
+  @include bp(4) {
     background: $text;
     height: $boner-height;
     left: 50%;

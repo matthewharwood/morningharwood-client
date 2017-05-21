@@ -9,6 +9,7 @@ import { WorkComponent } from './work.component';
 import { WorkPostComponent } from '../+work-post/work-post.component';
 import { AngularFireClientModule } from 'app/firebase/af.module';
 import { WorkPostResolve } from '../+work-post/work.resolve';
+import { WorkPostUIResolve } from '../+work-post/work-post-ui.resolve';
 
 
 @NgModule({
@@ -18,7 +19,7 @@ import { WorkPostResolve } from '../+work-post/work.resolve';
     SunDialModule,
     AngularFireClientModule,
   ],
-  providers: [WorkPostService, WorkPostResolve],
+  providers: [WorkPostService, WorkPostResolve, WorkPostUIResolve],
   declarations: [WorkComponent, ArticleHeaderComponent, WorkPostComponent],
   exports: [WorkComponent],
 })

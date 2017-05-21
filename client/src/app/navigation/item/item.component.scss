@@ -18,7 +18,7 @@ a {
   text-decoration: none;
   display: flex;
 
-  @include bp2(4) {
+  @include bp(4) {
     line-height: 1.4;
     font-size: 82px;
   }
@@ -34,7 +34,7 @@ a {
     background: $text;
     height: 1px;
 
-    @include bp2(4) {
+    @include bp(4) {
       height: 2px;
       left: $default-bleed;
       right: $default-bleed;
@@ -44,7 +44,7 @@ a {
 }
 
 span {
-  @include bp2(4) {
+  @include bp(4) {
     padding: 0 $default-bleed 0 0;
     position: relative;
     display: flex;
@@ -61,7 +61,7 @@ i {
   font-weight: $bold;
   position: absolute;
 
-  @include bp2(4) {
+  @include bp(4) {
     @include show(inline-block);
     bottom: $index-offset;
     font-size: $i-font-size;

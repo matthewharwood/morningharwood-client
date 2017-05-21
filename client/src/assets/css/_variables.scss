@@ -14,6 +14,7 @@ $sans-default-family: 'Noto Sans', sans-serif;
 $blue-link: #0095dd;
 $white: #fff;
 $white-off: #f7f7f7;
+$gray-off: #dedede;
 
 //sepia
 $sepia-bg: #f4ecd8;
@@ -23,7 +24,7 @@ $sepia-link: $blue-link ;
 
 //dark
 $dark-bg: $dark-black-mh;
-$dark-copy: $white-off;
+$dark-copy: $gray-off;
 $dark-link: $blue-link;
 
 //light
