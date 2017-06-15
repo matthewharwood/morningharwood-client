@@ -2,13 +2,10 @@
  * Created by matth on 2/3/2017.
  */
 import { Component, OnInit, ChangeDetectionStrategy  } from "@angular/core";
+import { Observable } from 'rxjs/Observable';
 import { data, RunningHeader, Item } from '../running-head/running-head.content';
-import { Observable } from "rxjs";
-
 import { bogo } from '../_handies/sorting';
 import { pulseData$ } from '../_handies/observable';
-
-
 
 /**
  * @ngModule MenuRouteModule
