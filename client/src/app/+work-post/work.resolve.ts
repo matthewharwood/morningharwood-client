@@ -3,7 +3,7 @@
  */
 import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, Resolve } from '@angular/router';
-import { POST_TABLE} from './work-post.content';
+import { POST_TABLE } from './work-post.content';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/of';
 import 'rxjs/add/observable/timer';
@@ -77,18 +77,19 @@ significant to somebody.◊`;
 @Injectable()
 export class WorkPostResolve implements Resolve<any> {
 
-  constructor() {
-
-  }
-
   resolve(route: ActivatedRouteSnapshot): any {
     // then replace dynamic with this.someService.getData(route.params.id)
     return Observable.of(
         Observable.concat(
             Observable.of(POST_TABLE.data.filter(post => post.slug === route.params.slug)),
             Observable.timer(3000)
-                .switchMapTo(Observable.of([{title: 'Stanley a previsualization tool for Nike Jordan', paragraph: PARA}]))
-        )
+                .switchMapTo(Observable.of([
+                  {
+                    title: 'Stanley a previsualization tool for Nike Jordan',
+                    paragraph: PARA,
+                  },
+                ])),
+        ),
     );
   }
 }
