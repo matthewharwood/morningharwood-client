@@ -54,10 +54,10 @@ dd {
   letter-spacing: .7px;
   padding-left: 24px;
   position: relative;
+  color: $text;
 
   @include bp(4) {
     @include show(block);
-    color: $text;
   }
 
   &::before {
@@ -67,9 +67,7 @@ dd {
     content: '\2014';
     color: $text;
   }
-
 }
-
 
 a {
   cursor: pointer;

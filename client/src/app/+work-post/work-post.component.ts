@@ -3,8 +3,8 @@
  */
 import { Component, ChangeDetectionStrategy, OnInit } from '@angular/core';
 import { SunDial } from '../app.interface';
-import { Observable } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs/Observable';
 
 
 @Component({

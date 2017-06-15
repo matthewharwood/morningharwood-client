@@ -2,9 +2,6 @@
  * Created by matth on 2/25/2017.
  */
 import { Component, ChangeDetectionStrategy, OnInit, Input } from '@angular/core';
-import { Store } from '@ngrx/store';
-import { AppState, SunDial } from '../app.interface';
-import { Observable } from 'rxjs';
 import { PartsOfDay, PartsOfDayEnum } from '../_handies/date'
 
 /**

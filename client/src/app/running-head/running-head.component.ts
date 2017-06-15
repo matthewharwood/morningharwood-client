@@ -1,6 +1,7 @@
 import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
 import { Item } from './running-head.content';
-import { Observable } from "rxjs";
+import { Observable } from 'rxjs/Observable';
+
 
 
 @Component({

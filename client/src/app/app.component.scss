@@ -1,3 +1,16 @@
+@import '../assets/css/_variables';
+@import '../assets/css/_mixins';
+@import '../assets/css/_extends';
+
+:host {
+
+}
+
+$partOfDayColors: 'light', 'dark', 'sepia';
+@for $i from 1 through length($partOfDayColors) {
+  @include color-filter-base(nth($partOfDayColors, $i));
+}
+
 h1 {
   font-size: 144px;
   line-height: 1;

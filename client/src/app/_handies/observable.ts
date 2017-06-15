@@ -1,7 +1,10 @@
 /**
  * Created by matth on 2/20/2017.
  */
-import { Observable } from "rxjs";
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/observable/interval';
+import 'rxjs/add/operator/take';
+import 'rxjs/add/operator/map';
 
 /**
  * @whatItDoes Take an Array makes a interval stream and emits one item based on that interval.

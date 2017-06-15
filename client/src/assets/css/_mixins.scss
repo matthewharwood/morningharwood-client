@@ -39,3 +39,32 @@
   align-items: center;
   justify-content: center;
 }
+
+@mixin color-filter-base($color) {
+  $local-bg: $white-off;
+  $local-copy: $black-mh;
+  $local-link: $blue-link;
+
+  &.#{$color}-filter {
+    @if $color == 'sepia' {
+      $local-bg: $sepia-bg;
+      $local-copy: $sepia-copy;
+      $local-link: $sepia-link;
+    } @else if $color == 'dark' {
+      $local-bg: $dark-bg;
+      $local-copy: $dark-copy;
+      $local-link: $dark-link;
+    } @else {
+      $local-bg: $light-bg;
+      $local-copy: $light-copy;
+      $local-link: $light-link;
+    }
+
+    background-color: $local-bg;
+    color:  $local-copy;
+
+    a {
+      color: $local-link
+    }
+  }
+}

@@ -6,9 +6,9 @@ import { ActivatedRouteSnapshot, Resolve } from '@angular/router';
 import { POST_TABLE} from './work-post.content';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/of';
-import 'rxjs/add/operator/mergeMap';
-import 'rxjs/add/operator/delay';
-import 'rxjs/add/operator/pluck';
+import 'rxjs/add/observable/timer';
+import 'rxjs/add/observable/concat';
+import 'rxjs/add/operator/switchMapTo';
 
 
 const PARA = `What do people do when they like
