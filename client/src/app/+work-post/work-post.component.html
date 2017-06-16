@@ -1,17 +1,25 @@
-<sun-dial></sun-dial>
-
-<div class="main" [ngClass]="(partOfDay | async)?.filterClass">
-
+<div class="close-article" [routerLink]="['/work']">
+  <mh-pic src="/close" ext="svg" alt="close article"></mh-pic>
+</div>
+<div class="main" [ngClass]="(partOfDay$ | async)?.filterClass">
   <article>
-    <h1>{{obs$.title}}</h1>
-    <p>
-      {{obs$.paragraph}}
-    </p>
-    <iframe width="740" height="464"
-            src="https://www.youtube.com/embed/lmu2WSuT_eg?theme=light&color=white&showinfo=0&controls=2&modestbranding=0&rel=0&start=3&cc_load_policy=1&iv_load_policy=1"
-            frameborder="0" allowfullscreen></iframe>
-    <iframe width="740" height="464"
-            src="https://www.youtube.com/embed/WLxe1a06FDY?theme=light&color=white&showinfo=0&controls=2&modestbranding=0&rel=0&start=3&cc_load_policy=1&iv_load_policy=1"
-            frameborder="0" allowfullscreen></iframe>
+
+    <h1>{{(obs$ | async)[0]?.title}}</h1>
+    <p>{{(obs$ | async)[0]?.paragraph}}</p>
+
+    <iframe
+        width="740"
+        height="464"
+        src="https://www.youtube.com/embed/lmu2WSuT_eg?theme=light&color=white&showinfo=0&controls=2&modestbranding=0&rel=0&start=3&cc_load_policy=1&iv_load_policy=1"
+        frameborder="0"
+        allowfullscreen>
+    </iframe>
+    <iframe
+        width="740"
+        height="464"
+        src="https://www.youtube.com/embed/WLxe1a06FDY?theme=light&color=white&showinfo=0&controls=2&modestbranding=0&rel=0&start=3&cc_load_policy=1&iv_load_policy=1"
+        frameborder="0"
+        allowfullscreen>
+    </iframe>
   </article>
 </div>

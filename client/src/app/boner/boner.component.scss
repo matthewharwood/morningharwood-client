@@ -7,7 +7,7 @@ $boner-height: ($boner-width/5);
 $rotation: 30deg;
 
 
-:host {
+app-boner {
   background: $text;
   height: $boner-height/2;
   left: 50%;
@@ -18,8 +18,7 @@ $rotation: 30deg;
   transform: rotate(-$rotation);
   width: $boner-width/2;
 
-  @include bp2(4) {
-    background: $text;
+  @include bp(4) {
     height: $boner-height;
     left: 50%;
     margin-left: -$boner-width/2;
@@ -27,8 +26,20 @@ $rotation: 30deg;
     top: 50%;
     width: $boner-width;
   }
-}
 
-h1 {
-  @include accessible-hide;
+  .dark-filter & {
+    background-color: $dark-copy;
+  }
+
+  .light-filter & {
+    background-color: $light-copy;
+  }
+
+  .sepia-filter & {
+    background-color: $sepia-copy;
+  }
+
+  h1 {
+    @include accessible-hide;
+  }
 }

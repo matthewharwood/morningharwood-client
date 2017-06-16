@@ -1,20 +1,4 @@
-@mixin bp($point) {
-  $small: "(min-width: 600px)";
-  $medium: "(min-width: 1250px)";
-  $large: "(min-width: 1599px)";
-
-  @if $point == small {
-    @media #{$small} { @content; }
-  }
-  @else if $point == medium {
-    @media #{$medium} { @content; }
-  }
-  @else if $point == large {
-    @media #{$large}  { @content; }
-  }
-}
-
-@mixin bp2($type){
+@mixin bp($type){
   @if $type == 1 {
     @media #{"(min-width: 576px)"} { @content; }
   }
@@ -56,39 +40,31 @@
   justify-content: center;
 }
 
-$mediaRequestSizesSm: 576 * 1;
+@mixin color-filter-base($color) {
+  $local-bg: $white-off;
+  $local-copy: $black-mh;
+  $local-link: $blue-link;
 
+  &.#{$color}-filter {
+    @if $color == 'sepia' {
+      $local-bg: $sepia-bg;
+      $local-copy: $sepia-copy;
+      $local-link: $sepia-link;
+    } @else if $color == 'dark' {
+      $local-bg: $dark-bg;
+      $local-copy: $dark-copy;
+      $local-link: $dark-link;
+    } @else {
+      $local-bg: $light-bg;
+      $local-copy: $light-copy;
+      $local-link: $light-link;
+    }
 
-// Small devices (landscape phones, 576px and up)
-//@mixin bp($point) {
-//  $xs: "";
-//  $sm: "(min-width: 576px)";
-//  $md: "(min-width: 768px)";
-//  $lg: "(min-width: 992px)";
-//  $xl: "(min-width: 1200px)";
-//
-//  @if $point == sm {
-//    { @content; }
-//  }
-//  @else if $point == sm {
-//    @media #{$sm} { @content; }
-//  }
-//  @else if $point == md {
-//    @media #{$sm} { @content; }
-//  }
-//  @else if $point == lg {
-//    @media #{$sm} { @content; }
-//  }
-//  @else if $point == xl {
-//    @media #{$sm} { @content; }
-//  }
-//}
+    background-color: $local-bg;
+    color:  $local-copy;
 
-//// Medium devices (tablets, 768px and up)
-//@media (min-width: 768px) { ... }
-//
-//// Large devices (desktops, 992px and up)
-//@media (min-width: 992px) { ... }
-//
-//// Extra large devices (large desktops, 1200px and up)
-//@media (min-width: 1200px) { ... }
+    a {
+      color: $local-link
+    }
+  }
+}

@@ -1,9 +1,11 @@
 import { Directive, OnInit, OnDestroy } from '@angular/core';
 import { KeyCodes } from './key-codes.enum';
-import { Observable } from "rxjs";
 import { Store } from '@ngrx/store';
 import { ACTIVATE, DEACTIVATE } from '../_handies/sdk';
 import { AppState } from '../app.interface';
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/observable/fromEvent';
+import 'rxjs/add/operator/bufferCount';
 
 @Directive({
   selector: '[mhKonami]'

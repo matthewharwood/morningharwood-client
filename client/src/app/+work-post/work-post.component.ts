@@ -1,26 +1,25 @@
 /**
  * Created by matth on 2/24/2017.
  */
-import { Component, ChangeDetectionStrategy, Input, OnInit } from '@angular/core';
+import { Component, ChangeDetectionStrategy, OnInit } from '@angular/core';
 import { SunDial } from '../app.interface';
-import { Observable } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs/Observable';
+
 
 @Component({
   selector: 'work-post',
   templateUrl: 'work-post.component.html',
   styleUrls: ['work-post.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class WorkPostComponent implements OnInit{
-  @Input('store') partOfDay: Observable<SunDial>;
+export class WorkPostComponent {
+  public partOfDay$: Observable<SunDial>;
   public obs$;
-  constructor(private route: ActivatedRoute){}
 
-  ngOnInit(){
-    this.route.snapshot.data.remote.subscribe(x => {
-      this.obs$ = x[0];
-    });
+  constructor(private route: ActivatedRoute) {
+    this.partOfDay$ = this.route.snapshot.data.ui;
+    this.obs$ = this.route.snapshot.data.remote;
   }
-
 }
 

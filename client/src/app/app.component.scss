@@ -1,3 +1,16 @@
+@import '../assets/css/_variables';
+@import '../assets/css/_mixins';
+@import '../assets/css/_extends';
+
+:host {
+
+}
+
+$partOfDayColors: 'light', 'dark', 'sepia';
+@for $i from 1 through length($partOfDayColors) {
+  @include color-filter-base(nth($partOfDayColors, $i));
+}
+
 h1 {
   font-size: 144px;
   line-height: 1;
@@ -7,4 +20,18 @@ h1 {
 h2 {
   text-transform: uppercase;
   margin-top: -16px;
+}
+
+.gourmet-hamburger {
+  position: fixed;
+  top: 0;
+  transition: all .2s ease-in;
+  transform: translateX(-25px);
+  z-index: 9999;
+  cursor: pointer;
+
+  &:hover {
+    transform: translateX(0px);
+    transition: all .2s ease-out;
+  }
 }

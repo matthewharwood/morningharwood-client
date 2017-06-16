@@ -1,7 +1,7 @@
 /**
  * Created by matth on 2/3/2017.
  */
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { POST_TABLE } from './work.content';
 import { AngularFire, FirebaseListObservable } from 'angularfire2';
 import { ActivatedRoute } from '@angular/router';
@@ -11,6 +11,7 @@ import { ActivatedRoute } from '@angular/router';
   selector: 'work-route',
   templateUrl: 'work.component.html',
   styleUrls: ['work.component.scss'],
+  encapsulation: ViewEncapsulation.None,
 })
 export class WorkComponent implements OnInit {
   public posts = POST_TABLE.data;

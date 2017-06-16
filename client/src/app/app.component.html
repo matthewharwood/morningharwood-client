@@ -1,3 +1,7 @@
-<div class="router-wrap" mhKonami [ngClass]="{'konami': setKonami }">
+<div class="gourmet-hamburger" [routerLink]="['/menu']">
+  <mh-pic src="/hamburger" ext="svg" alt="menu"></mh-pic>
+</div>
+<!--<sun-dial [partOfDay]="partOfDay$"></sun-dial>-->
+<div class="router-wrap" mhKonami [ngClass]="(partOfDay$ | async)?.filterClass">
   <router-outlet></router-outlet>
 </div>

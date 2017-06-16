@@ -5,7 +5,7 @@
 $white-work: $white-off;
 $overlay-open: rgba($black-mh, 50%);
 
-:host {
+work-route {
   align-items: flex-start;
   display: flex;
   flex-direction: column;
@@ -16,105 +16,128 @@ $overlay-open: rgba($black-mh, 50%);
   &.overlay-open {
     overflow: hidden;
   }
-}
 
-.work-container {
-  background: $white-work;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  position: relative;
-  width: 100%;
-
-  &.overlay-open * {
-    color: transparent;
-    text-shadow: 0 0 5px $overlay-open;
-  }
-}
-
-.article-header-wrapper {
-  @extend %full-wh;
-  position: relative;
-  flex-direction: column;
-
-  @include bp2(4) {
-    @include center-flex();
-  }
-}
-
-article {
-  @extend %full-wh;
-
-  display: flex;
-  flex: 1 0 100%;
-  flex-direction: column;
-  padding:  0;
-  height: 100vh;
-
-  @include bp2(4) {
-    padding:  0 32px 32px 32px;
-  }
-
-  &:first-child {
-
-    @include bp2(4){
-      padding: 32px;
-    }
-  }
-
-
-}
-//TODO: REFACTOR THIS BUTTON
-.action-button {
-  text-align: center;
-  padding: 19px 0;
-  background: $red-mh;
-  display: flex;
-  width: 182px;
-  color: $white-off;
-  text-decoration: none;
-  margin: 28px auto;
-  font-weight: normal;
-  border: solid 1px darken($red-mh, 10%);
-  justify-content: center;
-}
-
-footer {
-  @include hide();
-
-  @include bp2(4){
-    @include show(flex);
-    padding: 0 72px 72px 72px;
-    flex-direction: row;
-  }
-
-  .overview {
-    font-family: $sans-default-family;
-    font-size: 13px;
-    line-height: 1.8;
+  .work-container {
+    background-color: $white-work;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    position: relative;
     width: 100%;
 
-    @include bp2(4) {
-      padding: 0 32px;
-      width: 33%;
+    &.overlay-open * {
+      color: transparent;
+      text-shadow: 0 0 5px $overlay-open;
     }
 
-    @include bp2(5) {
-      padding: 0 72px;
+    .dark-filter & {
+      background-color: $dark-bg;
     }
 
-    h4 {
-      text-transform: uppercase;
-      font-weight: 800;
-      font-size: 9px;
-      letter-spacing: 2px;
-      color: #222;
-      padding: 0 0 12px 0;
+    .light-filter & {
+      background-color: $light-bg;
     }
 
-    p {
-      font-size: 12px;
-      line-height: 2.1;
+    .sepia-filter & {
+      background-color: $sepia-bg;
+    }
+  }
+
+  .article-header-wrapper {
+    @extend %full-wh;
+    position: relative;
+    flex-direction: column;
+
+    @include bp(4) {
+      @include center-flex();
+    }
+  }
+
+  article {
+    @extend %full-wh;
+
+    display: flex;
+    flex: 1 0 100%;
+    flex-direction: column;
+    padding: 0;
+    height: 100vh;
+
+    @include bp(4) {
+      padding: 0 32px 32px 32px;
+    }
+
+    &:first-child {
+
+      @include bp(4) {
+        padding: 32px;
+      }
+    }
+
+    .dark-filter & {
+      background-color: darken($dark-bg, 5%);
+    }
+
+    .light-filter & {
+      background-color: darken($light-bg, 5%);
+    }
+
+    .sepia-filter & {
+      background-color: darken($sepia-bg, 5%);
+    }
+
+  }
+  //TODO: REFACTOR THIS BUTTON
+  .action-button {
+    text-align: center;
+    padding: 19px 0;
+    background: $red-mh;
+    display: flex;
+    width: 182px;
+    color: $white-off;
+    text-decoration: none;
+    margin: 28px auto;
+    font-weight: normal;
+    border: solid 1px darken($red-mh, 10%);
+    justify-content: center;
+  }
+
+  footer {
+    @include hide();
+
+    @include bp(4) {
+      @include show(flex);
+      padding: 0 72px 72px 72px;
+      flex-direction: row;
+    }
+
+    .overview {
+      font-family: $sans-default-family;
+      font-size: 13px;
+      line-height: 1.8;
+      width: 100%;
+
+      @include bp(4) {
+        padding: 0 32px;
+        width: 33%;
+      }
+
+      @include bp(5) {
+        padding: 0 72px;
+      }
+
+      h4 {
+        text-transform: uppercase;
+        font-weight: 800;
+        font-size: 9px;
+        letter-spacing: 2px;
+        color: #222;
+        padding: 0 0 12px 0;
+      }
+
+      p {
+        font-size: 12px;
+        line-height: 2.1;
+      }
     }
   }
 }

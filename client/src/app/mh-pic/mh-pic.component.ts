@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { environment as env } from '../../environments/environment';
 
 
@@ -9,7 +9,7 @@ import { environment as env } from '../../environments/environment';
   templateUrl: './mh-pic.component.html',
   styleUrls: ['./mh-pic.component.css']
 })
-export class MhPicComponent implements OnInit {
+export class MhPicComponent {
   public rootSrc: any;
 
   @Input('src') srcLink:string = 'https://placebear.com/g/1920/1080';
@@ -17,9 +17,5 @@ export class MhPicComponent implements OnInit {
   @Input('ext') extType:string = 'jpg';
   constructor() {
     this.rootSrc = env.imgSrc;
-  }
-
-  ngOnInit() {
-
   }
 }

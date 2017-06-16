@@ -1,10 +1,7 @@
 /**
  * Created by matth on 2/25/2017.
  */
-import { Component, ChangeDetectionStrategy, OnInit } from '@angular/core';
-import { Store } from '@ngrx/store';
-import { AppState, SunDial } from '../app.interface';
-import { Observable } from 'rxjs';
+import { Component, ChangeDetectionStrategy, OnInit, Input } from '@angular/core';
 import { PartsOfDay, PartsOfDayEnum } from '../_handies/date'
 
 /**
@@ -23,24 +20,15 @@ import { PartsOfDay, PartsOfDayEnum } from '../_handies/date'
   selector: 'sun-dial',
   templateUrl: 'sun-dial.component.html',
   styleUrls: ['sun-dial.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SunDialComponent implements OnInit {
-  public partOfDay: Observable<SunDial>;
   public data: PartsOfDay[];
+  @Input() partOfDay: any;
 
-  constructor(private store: Store<AppState>) {
-    this.partOfDay = store.select('sunDial');
-  }
+  constructor() {}
 
   ngOnInit() {
     this.data = (<any>Object).values(PartsOfDayEnum);
-
-  }
-
-
-  static mapTSEnumToArray(enumerableObj:any):Array<number>{
-    const partLength = Object.keys(enumerableObj).length/2;
-    return new Array((partLength)? partLength : partLength + 1);
   }
 }

@@ -9,7 +9,7 @@ $red-folio: $red-mh;
   position: fixed;
   top: 16px;
 
-  @include bp2(4) {
+  @include bp(4) {
     bottom: 0;
     left: 72px;
     top: auto;
