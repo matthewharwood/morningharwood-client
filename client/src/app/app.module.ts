@@ -8,7 +8,7 @@ import { keyboardReducer, sunDialReducer } from './_handies/sdk';
 import { KonamiDirective } from './keyboard/konami.directive'
 import { routing } from "./app.route";
 import { MhPicModule } from './mh-pic/mh-pic.module';
-
+import { SunDialModule } from './sun-dial/sun-dial.module';
 
 @NgModule({
   declarations: [
@@ -20,6 +20,7 @@ import { MhPicModule } from './mh-pic/mh-pic.module';
     FormsModule,
     HttpModule,
     MhPicModule,
+    SunDialModule,
     routing,
     StoreModule.provideStore({keyboard: keyboardReducer, sunDial: sunDialReducer }),
   ],

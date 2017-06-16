@@ -1,5 +1,6 @@
-<sun-dial [partOfDay]="partOfDay$"></sun-dial>
-
+<div class="close-article" [routerLink]="['/work']">
+  <mh-pic src="/close" ext="svg" alt="close article"></mh-pic>
+</div>
 <div class="main" [ngClass]="(partOfDay$ | async)?.filterClass">
   <article>
 
