@@ -2,6 +2,10 @@ import { Injectable } from '@angular/core';
 import { CanActivate, Router } from '@angular/router';
 import { AngularFire } from "angularfire2";
 import { Observable } from "rxjs/Observable";
+import 'rxjs/add/observable/fromPromise';
+import 'rxjs/add/observable/of';
+import 'rxjs/add/operator/first';
+import 'rxjs/add/operator/mergeMap';
 
 @Injectable()
 export class CanActivateViaAuthGuard implements CanActivate {
