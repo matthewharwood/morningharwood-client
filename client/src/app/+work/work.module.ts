@@ -6,7 +6,7 @@ import { WorkPostService } from '../+work-post/work-post.service';
 import { routing } from './work.route';
 import { WorkComponent } from './work.component';
 import { WorkPostComponent } from '../+work-post/work-post.component';
-import { AngularFireClientModule } from 'app/firebase/af.module';
+// import { AngularFireClientModule } from 'app/firebase/af.module';
 import { WorkPostResolve } from '../+work-post/work.resolve';
 import { WorkPostUIResolve } from '../+work-post/work-post-ui.resolve';
 import { MhPicModule } from '../mh-pic/mh-pic.module';
@@ -16,7 +16,7 @@ import { MhPicModule } from '../mh-pic/mh-pic.module';
   imports: [
     CommonModule,
     routing,
-    AngularFireClientModule,
+    // AngularFireClientModule,
     MhPicModule,
   ],
   providers: [WorkPostService, WorkPostResolve, WorkPostUIResolve],

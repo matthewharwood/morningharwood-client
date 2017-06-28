@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { AF } from "../firebase/login.service";
+/** TODO(Add Auth) **/
+// import { AF } from "../firebase/login.service";
 
 @Component({
   selector: 'app-login',
@@ -10,10 +11,11 @@ import { AF } from "../firebase/login.service";
 export class LoginComponent {
   error: any;
 
-  constructor(public afService: AF, private router: Router) {}
+  // constructor(public afService: AF, private router: Router) {}
+  constructor( private router: Router) {}
   login() {
-    this.afService.loginWithGoogle().then((data) => {
-      this.router.navigate(['admin/dashboard']);
-    });
+    // this.afService.loginWithGoogle().then((data) => {
+    //   this.router.navigate(['admin/dashboard']);
+    // });
   }
 }

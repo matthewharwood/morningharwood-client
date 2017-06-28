@@ -1,12 +1,13 @@
 /**
  * Created by matth on 4/19/2017.
  */
+/** TODO(Add Auth) **/
 import { Routes, RouterModule } from '@angular/router';
 import { AdminComponent } from './admin.component';
 import { ModuleWithProviders } from '@angular/core';
 import { LoginComponent } from '../login/login.component';
 import { SignupComponent } from '../signup/signup.component';
-import { CanActivateViaAuthGuard } from '../firebase/auth.service';
+// import { CanActivateViaAuthGuard } from '../firebase/auth.service';
 import { getRouteDict, RemoteAdmin } from './admin.remote';
 import { getPathValues } from '../router/pathMatch';
 
@@ -22,7 +23,7 @@ export const routerConfig: Routes = [
   {
     path: RouteDict.DASHBOARD,
     component: AdminComponent,
-    canActivate: [CanActivateViaAuthGuard],
+    // canActivate: [CanActivateViaAuthGuard],
     resolve: {
       remote: RemoteAdmin,
     },

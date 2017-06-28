@@ -1,10 +1,11 @@
 /**
  * Created by matth on 2/3/2017.
  */
+/** TODO(ADD Auth) **/
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { POST_TABLE } from './work.content';
-import { AngularFire, FirebaseListObservable } from 'angularfire2';
-import { ActivatedRoute } from '@angular/router';
+// import { AngularFire, FirebaseListObservable } from 'angularfire2';
+// import { ActivatedRoute } from '@angular/router';
 
 
 @Component({
@@ -18,13 +19,14 @@ export class WorkComponent implements OnInit {
   public works: any;
   private _af: any;
 
-  constructor(af: AngularFire) {
-    this._af = af;
-  }
+  // constructor(af: AngularFire) {
+  //   this._af = af;
+  // }
+  constructor() {}
 
   ngOnInit() {
-    this.works = this._af.database.list('/work');
-    this.works.subscribe(console.log);
+    // this.works = this._af.database.list('/work');
+    // this.works.subscribe(console.log);
 
   }
 }

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFire, AuthProviders, AuthMethods } from 'angularfire2';
-import { Router } from '@angular/router';
-
+// import { AngularFire, AuthProviders, AuthMethods } from 'angularfire2';
+// import { Router } from '@angular/router';
+/** TODO(Add Auth) **/
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
@@ -10,7 +10,10 @@ import { Router } from '@angular/router';
 export class SignupComponent implements OnInit {
   error: any;
 
-  constructor(public af: AngularFire, private router: Router) {
+  // constructor(public af: AngularFire, private router: Router) {
+  //
+  // }
+  constructor() {
 
   }
 
