@@ -9,6 +9,7 @@ import { KonamiDirective } from './keyboard/konami.directive'
 import { routing } from "./app.route";
 import { MhPicModule } from './mh-pic/mh-pic.module';
 import { SunDialModule } from './sun-dial/sun-dial.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { SunDialModule } from './sun-dial/sun-dial.module';
     KonamiDirective,
   ],
   imports: [
+    BrowserAnimationsModule,
     BrowserModule,
     FormsModule,
     HttpModule,

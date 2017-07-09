@@ -10,6 +10,8 @@ import { WorkPostComponent } from '../+work-post/work-post.component';
 import { WorkPostResolve } from '../+work-post/work.resolve';
 import { WorkPostUIResolve } from '../+work-post/work-post-ui.resolve';
 import { MhPicModule } from '../mh-pic/mh-pic.module';
+import { EndPointService } from '../api/endpoint.service';
+import { WorkResolve } from './work.resolve';
 
 
 @NgModule({
@@ -19,9 +21,9 @@ import { MhPicModule } from '../mh-pic/mh-pic.module';
     // AngularFireClientModule,
     MhPicModule,
   ],
-  providers: [WorkPostService, WorkPostResolve, WorkPostUIResolve],
-  declarations: [WorkComponent, ArticleHeaderComponent, WorkPostComponent],
-  exports: [WorkComponent],
+  providers: [ WorkPostService, WorkPostResolve, WorkResolve, WorkPostUIResolve, EndPointService ],
+  declarations: [ WorkComponent, ArticleHeaderComponent, WorkPostComponent ],
+  exports: [ WorkComponent ],
 })
 export class WorkRouteModule {
 }

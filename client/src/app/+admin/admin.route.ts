@@ -5,11 +5,11 @@
 import { Routes, RouterModule } from '@angular/router';
 import { AdminComponent } from './admin.component';
 import { ModuleWithProviders } from '@angular/core';
-import { LoginComponent } from '../login/login.component';
+import { LoginComponent } from '../+login/login.component';
 import { SignupComponent } from '../signup/signup.component';
-// import { CanActivateViaAuthGuard } from '../firebase/auth.service';
 import { getRouteDict, RemoteAdmin } from './admin.remote';
 import { getPathValues } from '../router/pathMatch';
+import { CanActivateViaAuthGuard } from '../auth/auth.service';
 
 export const RouteDict = getRouteDict();
 export const PathValue = getPathValues();

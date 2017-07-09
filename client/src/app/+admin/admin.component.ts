@@ -19,10 +19,11 @@ import { ActivatedRoute } from '@angular/router';
 export class AdminComponent implements OnInit {
   public adminRoutes: any;
 
-  constructor(private route: ActivatedRoute) {
+  constructor(private route: ActivatedRoute,) {
   }
 
   ngOnInit() {
+
     this.adminRoutes = Object.assign({}, {
       rootPath: getRootPath(),
       routes: Object.keys(getRouteDict()).map(key => key),

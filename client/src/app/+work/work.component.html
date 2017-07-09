@@ -1,16 +1,25 @@
-<article *ngFor="let post of posts">
-  <div class="work-container"  [ngClass]="{'overlay-open': modalState === 'MODAL_OPEN'}">
-    <div class="article-header-wrapper">
-      <app-article-header [post]="post"></app-article-header>
-      <a class="action-button" [routerLink]="[post.slug]">Learn More</a>
-    </div>
 
-    <footer>
-      <div class="overview" *ngFor="let overview of post.overview">
-        <h4>{{overview.title}}</h4>
-        <h5>{{overview.subtitle}}</h5>
-        <p>{{overview.description}}</p>
-      </div>
-    </footer>
+<article *ngFor="let work of works$; let idx = index">
+  <div class="work-container">
+    <div class="article-header-wrapper">
+      <app-article-header [post]="work" [index]="idx"></app-article-header>
+      <a class="action-button" [routerLink]="[work.slug]">Learn More</a>
+    </div>
   </div>
 </article>
+<!--<article *ngFor="let post of posts">-->
+  <!--<div class="work-container">-->
+    <!--<div class="article-header-wrapper">-->
+      <!--<app-article-header [post]="post"></app-article-header>-->
+      <!--<a class="action-button" [routerLink]="[post.slug]">Learn More</a>-->
+    <!--</div>-->
+
+    <!--<footer>-->
+      <!--<div class="overview" *ngFor="let overview of post.overview">-->
+        <!--<h4>{{overview.title}}</h4>-->
+        <!--<h5>{{overview.subtitle}}</h5>-->
+        <!--<p>{{overview.description}}</p>-->
+      <!--</div>-->
+    <!--</footer>-->
+  <!--</div>-->
+<!--</article>-->

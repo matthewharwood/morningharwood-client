@@ -6,6 +6,8 @@ import { RunningHeadModule } from '../running-head/running-head.module';
 import { BonerModule } from '../boner/boner.module';
 import { FolioModule } from '../folio/folio.module';
 import { routing } from "./menu.route";
+import { EndpointModule } from '../api/endpoint.module';
+import { EndPointService } from '../api/endpoint.service';
 
 
 
@@ -16,9 +18,10 @@ import { routing } from "./menu.route";
     FolioModule,
     NavigationModule,
     RunningHeadModule,
+    EndpointModule,
     routing,
   ],
-  providers: [],
+  providers: [EndPointService],
   declarations: [MenuComponent],
   exports: [MenuComponent],
 })

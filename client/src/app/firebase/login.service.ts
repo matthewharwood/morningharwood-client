@@ -15,7 +15,7 @@
 //    * @returns {firebase.Promise<FirebaseAuthState>}
 //    */
 //   loginWithGoogle() {
-//     return this.af.auth.login(myFirebaseAuthConfig);
+//     return this.af.auth.+login(myFirebaseAuthConfig);
 //   }
 //   /**
 //    * Logs out the current user

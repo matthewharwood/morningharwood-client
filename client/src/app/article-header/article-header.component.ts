@@ -18,7 +18,11 @@ export interface WorkPost {
 })
 export class ArticleHeaderComponent implements OnInit {
   @Input() post: WorkPost;
+  @Input() index: number;
   constructor() { }
 
-  ngOnInit() {}
+  ngOnInit() {
+
+
+  }
 }

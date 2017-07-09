@@ -35,7 +35,10 @@ export const data: RunningHeader = [
   {name: 'foreign languages',},
   {name: 'streaming on the internet',},
   {name: 'video games',},
-  {name: 'coffee'},
+  {name: 'coffee',},
+  {name: 'crypto currency',},
+  {name: 'blockchain',},
+  {name: 'smart contracts',},
 ];
 
 
