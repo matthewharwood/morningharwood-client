@@ -10,6 +10,7 @@ interface IRouteDict {
   LOGIN: string,
   DASHBOARD: string,
   WORK: string,
+  WORK_DETAIL: string,
   SIGN_UP: string
 }
 
@@ -20,6 +21,7 @@ export const RouteDict: IRouteDict = {
   LOGIN: 'login',
   DASHBOARD: 'dashboard',
   WORK: 'work',
+  WORK_DETAIL: 'detail',
   SIGN_UP: 'signup',
 };
 

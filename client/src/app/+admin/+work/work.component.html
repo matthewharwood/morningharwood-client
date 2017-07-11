@@ -1,1 +1,22 @@
-<h1>WOWO</h1>
+
+<md-list>
+  <h3 md-subheader>CRUD - Works</h3>
+
+  <md-list-item *ngFor="let work of works$">
+    <h4 md-line>{{work.title}}</h4>
+
+    <button md-button>Edit</button>
+    <button md-button>Delete</button>
+
+  </md-list-item>
+  <md-divider></md-divider>
+  <h3 md-subheader>Edit</h3>
+  <!--<md-list-item *ngFor="let note of notes">-->
+    <!--<h4 md-line>{{note.name}}</h4>-->
+    <!--<p md-line> {{note.updated | date}} </p>-->
+  <!--</md-list-item>-->
+</md-list>
+<router-outlet></router-outlet>
+<div class="action-button">
+  <a md-fab routerLink="."><md-icon svgIcon="thumbs-up"></md-icon></a>
+</div>

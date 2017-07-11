@@ -10,7 +10,9 @@ import { SignupComponent } from '../signup/signup.component';
 import { getRouteDict, RemoteAdmin } from './admin.remote';
 import { getPathValues } from '../router/pathMatch';
 import { CanActivateViaAuthGuard } from '../auth/auth.service';
-import { AdminWorkComponent } from './+work/work.component';
+
+import { workDetailRoute } from './+work/work.route';
+
 
 export const RouteDict = getRouteDict();
 export const PathValue = getPathValues();
@@ -29,11 +31,7 @@ export const routerConfig: Routes = [
       remote: RemoteAdmin,
     },
   },
-  {
-    path: RouteDict.WORK,
-    component: AdminWorkComponent,
-    // canActivate: [CanActivateViaAuthGuard],
-  },
+  workDetailRoute,
   {
     path: RouteDict.LOGIN,
     component: LoginComponent,

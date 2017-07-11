@@ -28,7 +28,6 @@ export function getPartOfDay(date: Date): (PartsOfDay) {
   const hours = date.getHours();
 
   if (isEvening(hours)) {
-    console.log('wtf');
     return PartsOfDayEnum.Evening;
   } else if (isAfterNoon(hours)) {
     return PartsOfDayEnum.Afternoon
