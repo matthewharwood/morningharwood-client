@@ -7,7 +7,7 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { MdButtonModule } from '@angular/material';
 import { WorkDetailModule } from './+detail/work-detail.module';
-import { workDetailRoute } from './work.route';
+// import { workDetailRoute } from './work.route';
 
 @NgModule({
   imports: [
@@ -17,7 +17,7 @@ import { workDetailRoute } from './work.route';
     FormsModule,
     MdButtonModule,
     WorkDetailModule,
-    workDetailRoute,
+    // workDetailRoute,
   ],
   providers: [ EndPointService ],
   declarations: [

@@ -20,7 +20,7 @@ export const POST_TABLE:WorkPosts = {
     {
       id: 0,
       title: '▄▄▄▄ ▄▄ ▄▄ ▄▄▄ ▄ ▄▄ ▄▄ ▄ ▄ ▄ ▄▄ ▄▄ ▄ ▄ ▄ ▄▄ ▄▄ ▄ ',
-      categories: ['Web Application'],
+      category: 'Web Application',
       paragraph: `${randomBlokk(1000)}`,
       slug: 'stanley',
 

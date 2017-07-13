@@ -1,23 +1,26 @@
 /**
  * Created by matth on 7/10/2017.
  */
-/**
- * Created by matth on 7/10/2017.
- */
 
-import { RouterModule, Routes } from '@angular/router';
+import { Routes } from '@angular/router';
 import { AdminWorkComponent } from './work.component';
 import { RouteDict } from '../admin.remote';
-import { ModuleWithProviders } from '@angular/core';
 import { workDetailChildRoute } from './+detail/work-detail.route';
+import { AdminWorkDetailComponent } from './+detail/work-detail.component';
 
 
-export const ROUTE: Routes = [
+export const workDetailRoute: Routes = [
   {
     path: RouteDict.WORK,
     component: AdminWorkComponent,
-    children: workDetailChildRoute
+  },
+  {
+    path: RouteDict.WORK_DETAIL,
+    component: AdminWorkDetailComponent,
+  },
+  {
+    path: `${RouteDict.WORK_DETAIL}/:id`,
+    component: AdminWorkDetailComponent,
   },
 ];
 
-export const workDetailRoute: ModuleWithProviders = RouterModule.forChild(ROUTE);

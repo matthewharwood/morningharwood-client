@@ -5,14 +5,11 @@
 import { Routes, RouterModule } from '@angular/router';
 import { AdminComponent } from './admin.component';
 import { ModuleWithProviders } from '@angular/core';
-import { LoginComponent } from '../+login/login.component';
-import { SignupComponent } from '../signup/signup.component';
 import { getRouteDict, RemoteAdmin } from './admin.remote';
 import { getPathValues } from '../router/pathMatch';
-import { CanActivateViaAuthGuard } from '../auth/auth.service';
-
 import { workDetailRoute } from './+work/work.route';
-
+import { loginRoute } from '../+login/login.route';
+import { signUpRoute } from '../signup/signup.route';
 
 export const RouteDict = getRouteDict();
 export const PathValue = getPathValues();
@@ -31,15 +28,9 @@ export const routerConfig: Routes = [
       remote: RemoteAdmin,
     },
   },
-  workDetailRoute,
-  {
-    path: RouteDict.LOGIN,
-    component: LoginComponent,
-  },
-  {
-    path: RouteDict.SIGN_UP,
-    component: SignupComponent,
-  },
+  ...workDetailRoute,
+  loginRoute,
+  signUpRoute,
 ];
 
 
