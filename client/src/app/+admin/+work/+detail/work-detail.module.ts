@@ -5,11 +5,11 @@
 
 import { NgModule } from '@angular/core';
 import { AdminWorkDetailComponent } from './work-detail.component';
-// import { workDetailChildRoute } from './work-detail.route';
+import { routing } from './work-detail.route';
 
 
 @NgModule({
-  imports:[],
+  imports:[routing],
   providers:[],
   declarations:[AdminWorkDetailComponent],
 })

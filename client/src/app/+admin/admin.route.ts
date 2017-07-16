@@ -28,7 +28,6 @@ export const routerConfig: Routes = [
       remote: RemoteAdmin,
     },
   },
-  ...workDetailRoute,
   loginRoute,
   signUpRoute,
 ];

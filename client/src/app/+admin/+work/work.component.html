@@ -5,7 +5,7 @@
   <md-list-item *ngFor="let work of works$">
     <h4 md-line>{{work.title}}</h4>
 
-    <button md-button>Edit</button>
+    <button md-button [routerLink]="['detail', work.slug]">Edit</button>
     <button md-button>Delete</button>
 
   </md-list-item>
@@ -16,7 +16,7 @@
     <!--<p md-line> {{note.updated | date}} </p>-->
   <!--</md-list-item>-->
 </md-list>
-
+<router-outlet></router-outlet>
 <div class="action-button">
   <a md-fab routerLink="."><md-icon svgIcon="thumbs-up"></md-icon></a>
 </div>

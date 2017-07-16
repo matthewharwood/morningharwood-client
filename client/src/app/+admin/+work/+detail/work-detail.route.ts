@@ -2,13 +2,14 @@
  * Created by matth on 7/10/2017.
  */
 
-import { Routes } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { AdminWorkDetailComponent } from './work-detail.component';
 import { RouteDict } from '../../admin.remote';
+import { ModuleWithProviders } from '@angular/core';
 
 export const workDetailChildRoute: Routes = [
   {
-    path: RouteDict.WORK_DETAIL,
+    path: RouteDict.DEFAULT,
     component: AdminWorkDetailComponent,
   },
   {
@@ -16,3 +17,5 @@ export const workDetailChildRoute: Routes = [
     component: AdminWorkDetailComponent,
   },
 ];
+
+export const routing: ModuleWithProviders = RouterModule.forChild(workDetailChildRoute);

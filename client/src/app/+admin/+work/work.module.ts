@@ -7,7 +7,7 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { MdButtonModule } from '@angular/material';
 import { WorkDetailModule } from './+detail/work-detail.module';
-// import { workDetailRoute } from './work.route';
+import { routing } from './work.route';
 
 @NgModule({
   imports: [
@@ -17,12 +17,11 @@ import { WorkDetailModule } from './+detail/work-detail.module';
     FormsModule,
     MdButtonModule,
     WorkDetailModule,
-    // workDetailRoute,
+    routing
   ],
   providers: [ EndPointService ],
   declarations: [
     AdminWorkComponent,
-
   ],
 })
 export class AdminWorkModule {
